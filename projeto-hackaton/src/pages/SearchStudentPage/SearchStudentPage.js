@@ -8,7 +8,7 @@ import {
   SearchStudentButton,
 } from "./Styled";
 
-const DonorPage = () => {
+const SearchStudentPage = () => {
   return (
     <MainDiv>
       <InfoDiv>
@@ -55,4 +55,4 @@ const DonorPage = () => {
   );
 };
 
-export default DonorPage;
+export default SearchStudentPage;
