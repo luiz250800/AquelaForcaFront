@@ -1,31 +1,37 @@
 import styled from "styled-components";
 
-export const MainDivFooter = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 2.5rem;
-  width: 100vw;
-  border: 1px solid black;
-  bottom: 0px;
-  font-family: 'Nunito Sans', sans-serif;
 
-`;
+// export const Container = styled.div`
+//   display: flex;
+//   position: relative;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 5rem 2.5rem;
+//   width: 100vw;
+//   border: 1px solid black;
+//   bottom: 0px;
+//   font-family: 'Nunito Sans', sans-serif;
 
-// P A R C E R I A
-export const Parceria = styled.div`
+// `;
+
+//C O N T A I N E R
+export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  width: 90%;
+  align-items: center;
+  width: 100vw;
+  /* padding: 5rem 2.5rem; */
   margin-bottom: 8rem;
+  border: 1px solid red;
   
 
 `;
 
-export const ParceiroBox1 = styled.div`
+//B O X 1
+export const Box1 = styled.div`
 display: flex;
 flex-direction: column;
+padding: 5rem 2.5rem;
 width: 40%;
 height: 100%;
 /* background-color: red; */
@@ -69,8 +75,8 @@ height: 100%;
 }
 
 `
-
-export const ParceiroBox2 = styled.div`
+//B O X 2
+export const Box2 = styled.div`
 width: 60%;
 height: 100%;
 padding: 7rem 7rem 0 7rem;
@@ -84,21 +90,3 @@ padding: 7rem 7rem 0 7rem;
   
 }
 `
-// F A L E   C O N O S C O
-export const FaleConosco = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  /* padding: 5rem 2.5rem; */
-  /* padding-top: 5rem;
-  padding-bottom: 5rem;
-  padding-left: 2.5rem; */
- 
-  border: 1px ;
-
-  & > h2 {
-    color: blue;
-  }
-`
-
-
