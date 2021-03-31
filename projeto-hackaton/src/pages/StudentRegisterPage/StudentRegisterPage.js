@@ -12,6 +12,7 @@ import {
   NextButton,
   TerciaryInfoDiv,
 } from "./Styled";
+import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
 
 const StudentRegisterPage = () => {
   return (
@@ -50,8 +51,12 @@ const StudentRegisterPage = () => {
           </label>
         </SecondaryInfoDiv>
         <ButtonsDiv>
-          <AddButton> Adicionar Aluno </AddButton>
-          <AddButton> Adicionar Material </AddButton>
+          <AddButton>
+            <AiOutlineUserAdd size="20px" /> Adicionar Aluno
+          </AddButton>
+          <AddButton>
+            <AiOutlinePlus size="20px" /> Adicionar Material
+          </AddButton>
         </ButtonsDiv>
         <ButtonsDiv>
           <NextButton> Próximo </NextButton>
