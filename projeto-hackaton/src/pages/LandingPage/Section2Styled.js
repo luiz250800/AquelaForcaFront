@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-
-export const Container = styled.div`
+export const MainDiv = styled.div`
 margin: 0;
 padding: 0;
-font-family: Nunito, "sans-serif";
+display: flex;
+
+width: 100vw;
+border: 1px solid green;
 background-color: rgb(89,73,141,1);
 `
 

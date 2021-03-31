@@ -5,12 +5,13 @@ import {
   DonnorButton,
   Box2,
 } from "./Section1Styled";
-import Lousa from "../../images/imgLousa"
+import Lousa from "../../images/imgBoard";
+import background from "../../images/imgBackground";
+import Background from "../../images/imgBackground";
 
 const CallToAction = () => {
   return (
     <MainDiv>
-
     <Box1>
       <table>
         <td>

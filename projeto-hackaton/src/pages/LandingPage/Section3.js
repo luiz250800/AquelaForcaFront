@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box1, Box2 } from "./Section3Styled";
+import { MainDiv, Box1, Box2 } from "./Section3Styled";
 import { GiThreeFriends } from "react-icons/gi";
 
 
@@ -7,7 +7,7 @@ import { GiThreeFriends } from "react-icons/gi";
 
 const Partner = () => {
     return(
-        <Container>
+        <MainDiv>
      <Box1>
      <h1>Seja Parceiro <GiThreeFriends color="#56B2A2" size="50px"/></h1> 
        <form>
@@ -26,7 +26,7 @@ const Partner = () => {
        <p>Quem manda na minha terra sou euzis! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.</p>
        <p>Delegadis gente finis, bibendum egestas augue arcu ut est. Suco de cevadiss deixa as pessoas mais interessantis. Leite de capivaris, leite de mula manquis sem cabeça. Detraxit consequat et quo num tendi nada.</p>
      </Box2>
- </Container>
+ </MainDiv>
         )
     }
     

@@ -6,7 +6,6 @@ export const MainDiv = styled.div`
   display: flex;
   
   flex-direction: row;
-  font-family: Nunito, "sans-serif";
 `;
 
 export const Box1 = styled.div `
