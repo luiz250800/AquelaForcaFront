@@ -1,26 +1,14 @@
 import styled from "styled-components";
 
-
-// export const Container = styled.div`
-//   display: flex;
-//   position: relative;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 5rem 2.5rem;
-//   width: 100vw;
-//   border: 1px solid black;
-//   bottom: 0px;
-//   font-family: 'Nunito Sans', sans-serif;
-
-// `;
-
-//C O N T A I N E R
-export const Container = styled.div`
+export const MainDiv = styled.div`
+  margin: 0;
+  padding: 0;
   display: flex;
+  
   flex-direction: row;
   align-items: center;
   width: 100vw;
-  /* padding: 5rem 2.5rem; */
+
   margin-bottom: 8rem;
   border: 1px solid red;
   
