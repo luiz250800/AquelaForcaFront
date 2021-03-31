@@ -1,34 +1,50 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const MainDiv = styled.div`
+  margin: 0;
+  padding: 0;
   display: flex;
-  /* position: relative; */
   flex-direction: row;
   align-items: center;
-  padding: 5rem 2.5rem;
   width: 100vw;
-  border: 1px solid red;
-  bottom: 0px;
-  font-family: 'Nunito Sans', sans-serif;
+  height: 15rem;
+  padding-bottom: 2rem;
+  background-color: rgb(89,73,141,1);
+  border: 1px solid green;
 
+ 
 `;
+
 
 
 // F A L E   C O N O S C O
 export const ContactUs = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
-  /* padding: 5rem 2.5rem; */
-  /* padding-top: 5rem;
-  padding-bottom: 5rem;
-  padding-left: 2.5rem; */
- 
-  border: 1px ;
+  align-content: flex-start;
+  width: 70%;
+  padding-left: 4rem;
+  
 
-  & > h2 {
-    color: blue;
+  & > p {
+    display: flex;
+
+    color: white;
+    line-height: 0.2rem;
   }
+
+  & > h1, a {
+    color: white;
+  }
+
+
+`;
+
+
+export const WhatsIcon = styled.div`
+display: flex;
+align-content: flex-end;
+
 `
 
 

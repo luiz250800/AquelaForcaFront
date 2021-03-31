@@ -7,7 +7,7 @@ export const MainDiv = styled.div`
   
   align-items: center;
   flex-direction: column;
-  border: 1px solid green;
   font-family: Nunito, "sans-serif";
+  
 `;
 

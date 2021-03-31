@@ -8,6 +8,7 @@ import { MainDiv } from "./Styled";
 const LandingPage = () => {
   return (
     <MainDiv>
+      
      <CallToAction></CallToAction>
      <AboutUs></AboutUs>
      <Partner></Partner>

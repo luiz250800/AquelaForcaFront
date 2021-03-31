@@ -3,11 +3,9 @@ import {
   MainDiv,
   Box1,
   DonnorButton,
-  Box2,
+  Img,
 } from "./Section1Styled";
-import Lousa from "../../images/imgBoard";
-import background from "../../images/imgBackground";
-import Background from "../../images/imgBackground";
+import imgLousa from "../../images/imgLousa.svg"
 
 const CallToAction = () => {
   return (
@@ -15,8 +13,8 @@ const CallToAction = () => {
     <Box1>
       <table>
         <td>
-      <tr><h3>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. </h3></tr>
-      <tr><p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. A ordem dos tratores não altera o pão duris. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si u mundo tá muito paradis?</p></tr>
+      <tr><h1>O que acha de investir na educação de crianças que precisam? </h1></tr>
+      <tr><p>Existem crianças que infelizmente não possuem material para estudar. Essa plataforma foi criada com o mintuito de estabeleceruma ponte entre escolas, doadores e alunos que precisam dos materiais. </p></tr>
       <tr><DonnorButton className="donnorButton">Bora Doar!</DonnorButton></tr>
       </td>
       
@@ -24,9 +22,9 @@ const CallToAction = () => {
       </table>
       
     </Box1>
-    <Box2>
-    <Lousa className="imgLousa"/>
-    </Box2>
+    <Img>
+    <img src={imgLousa} className="imgLousa"/>
+    </Img>
 
 
 
