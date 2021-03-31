@@ -5,12 +5,13 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import SearchStudentPage from "./pages/SearchStudentPage/SearchStudentPage";
 import DonorRegisterPage from "./pages/DonorRegisterPage/DonorRegisterPage";
 import StudentRegisterPage from "./pages/StudentRegisterPage/StudentRegisterPage";
+import Router from "./Router/Router";
 
 function App() {
   return (
     <div>
       <Header />
-      <StudentRegisterPage />
+      <Router />
       <Footer />
     </div>
   );
