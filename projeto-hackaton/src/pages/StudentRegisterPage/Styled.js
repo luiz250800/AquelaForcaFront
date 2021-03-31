@@ -77,7 +77,7 @@ export const AddButton = styled.button`
   height: 45px;
   border-radius: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #fff8f0;
   color: #59498d;
   border: 2px solid #59498d;
