@@ -3,7 +3,7 @@ import {
   MainDiv,
   TitleDiv,
   ButtonsDiv,
-  RoleButton,
+  RoleA,
   InputsDiv,
   NextButton,
   DisclaimerDiv,
@@ -19,12 +19,12 @@ const SchoolRegisterPage = () => {
         <h3> Vamos começar cadastrando algumas informações: </h3>
       </TitleDiv>
       <ButtonsDiv>
-        <RoleButton>
+        <RoleA href={"/cadastro/responsavel"}>
           <IoMdPerson size="20px" /> Responsável
-        </RoleButton>
-        <RoleButton>
+        </RoleA>
+        <RoleA href={"/cadastro/escola"}>
           <FaGraduationCap size="20px" /> Escolas
-        </RoleButton>
+        </RoleA>
       </ButtonsDiv>
       <InputsDiv>
         <label>
