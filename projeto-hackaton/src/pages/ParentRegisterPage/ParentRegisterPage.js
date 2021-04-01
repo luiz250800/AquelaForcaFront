@@ -22,7 +22,7 @@ const ParentRegisterPage = () => {
           <IoMdPerson size="20px" /> Responsável
         </RoleButton>
         <RoleButton>
-          <FaGraduationCap size="20px" /> Escola
+          <FaGraduationCap size="20px" /> Escolas
         </RoleButton>
       </ButtonsDiv>
       <InputsDiv>
