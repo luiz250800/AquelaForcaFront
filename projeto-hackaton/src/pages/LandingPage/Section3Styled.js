@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const MainDiv = styled.div`
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  font-family: Nunito, "sans-serif";
+
   display: flex;
-  
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-
-padding-bottom: 4rem;
+  width: 96vw;
+  padding-bottom: 4rem;
+  /* border: 1px solid green; */
 `;
 
 //SIDEBAR
@@ -25,6 +27,7 @@ margin-bottom: 4rem;
 
 & > h1 {
   padding-bottom: 2rem;
+  color: rgb(89,73,141,1);
 }
 
 & > sidebar {
@@ -50,28 +53,31 @@ margin-bottom: 4rem;
 }
 `
 
-
-//FORM MAIN DIV
-export const FormBox = styled.div`
+//FORM BOX
+export const BigBox = styled.div`
 display: flex;
 flex-direction: row;
-border: 1px solid red;
+align-items:center;
+/* border: 1px solid red; */
+width: 96vw;
 `
 
 //FORMULARY
 export const Formulary = styled.div`
 display: flex;
 flex-direction: column;
-margin-top: 2rem;
-margin-bottom: 2rem;
-margin-left: 2rem;
-padding: 0 2rem 2rem 2rem;
-width: 40%;
-height: 100%;
+align-items: center;
+margin: 2rem 1rem;
+padding:  2rem;
+height: 70vh;
+width: 35vw;
 background-color: rgb(180,233,227,1);
 border-radius: 10px;
+/* border: 1px solid red; */
 
 & > h1 {
+  display: flex;
+  flex-direction: row;
   color: rgb(89,73,141,1);
 }
 
@@ -80,50 +86,70 @@ border-radius: 10px;
   display:flex;
   flex-direction: column;
   width: 100%;
-  /* background-color: rgb(180,233,227,1); */
-  /* border: 1px solid green; */
   border: 0;
   
 }
 
-& > form > input,textarea {
+& > form > input {
   
-  font-size: 18px;
-  border-radius: 5px;
-  border-color: #56B2A2;
-  color: #6558F5;
+  font-size: 1rem;
+  border-radius: 6px;
+  border-color: #FFF;
   outline: none;
-  padding: 10px;
-  margin: 15px 0;
+  padding: 0.6rem;
+  margin: 1rem 0;
+  
 }
 
-& > form > button {
+& > form > textarea {
+  font-family: Nunito, "sans-serif";
+  font-size: 1rem;
+  border-radius: 6px;
+  border-color: #FFF;
+  outline: none;
+  padding: 0.6rem;
+  margin: 1rem 0;
+  height: 15vh;
+}
+
+& > button {
+  font-family: Nunito, "sans-serif";
   text-decoration: none;
   color: #FFF;
-  background-color: rgb(89,73,141,1);
-  width: 50%;
-  padding: 5px 10px;
   position: relative;
-  transition: all 0.6s ease;
+  background-color: rgb(89,73,141,1);
+  width: 8rem;
+  height: 2.5rem;
+  text-align:center;
+  transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 10px;
-
-& > form > button:hover {
-  transition: all 0.6s ease;
-  transition-delay: 0.3s;
-  color: #000;
-}  
-
+  border: none;
+  outline: none;
+  margin-top: 0.8rem;
 }
 
+& > button:hover {
+  width: 9rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  background-color: rgb(255,136,17,1);
+}  
+
+& > button:active {
+      background-color: rgb(131, 153, 254);
+    }
 `
-//MESSAGE
+
+//M E S S A G E
 export const Message = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: justify;
 width: 50%;
 height: 100%;
-padding: 7rem 7rem 0 7rem;
-/* font-family: 'Nunito Sans', sans-serif; */
-/* background-color: grey; */
+padding: 5rem 2.5rem;
 /* border: 1px solid red; */
 
 
