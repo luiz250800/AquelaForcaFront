@@ -15,7 +15,7 @@ const CallToAction = () => {
         <td>
       <tr><h1>O que acha de investir na educação de crianças que precisam? </h1></tr>
       <tr><p>Existem crianças que infelizmente não possuem material para estudar. Essa plataforma foi criada com o mintuito de estabeleceruma ponte entre escolas, doadores e alunos que precisam dos materiais. </p></tr>
-      <tr><DonnorButton className="donnorButton">Bora Doar!</DonnorButton></tr>
+      <tr><DonnorButton className="donnorButton" href={"/busca/estudante"}>Bora Doar!</DonnorButton></tr>
       </td>
       
       
