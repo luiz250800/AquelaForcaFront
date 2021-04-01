@@ -2,6 +2,7 @@ import React from "react";
 import {
   MainDiv,
   InfoDiv,
+  FirstInfoDiv,
   StudentNameInput,
   SecondaryInfoDiv,
   StudentRAInput,
@@ -11,13 +12,18 @@ import {
   AddButton,
   NextButton,
   TerciaryInfoDiv,
+  Img,
 } from "./Styled";
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
+import imgBabyDraw from "../../images/imgBabyDraw.svg";
 
 const StudentRegisterPage = () => {
   return (
     <MainDiv>
       <InfoDiv>
+        <FirstInfoDiv>
+          <h2>Preencha os dados sobre o aluno</h2>
+        </FirstInfoDiv>
         <SecondaryInfoDiv>
           <label>
             Nome do Aluno
@@ -73,7 +79,11 @@ const StudentRegisterPage = () => {
             vitae, aliquet at risus. Quisque porttitor enim nec iaculis tempor.{" "}
           </p>
         </TerciaryInfoDiv>
+        
       </InfoDiv>
+      <Img>
+    <img src={imgBabyDraw} className="imgBabyDraw"/>
+    </Img>
     </MainDiv>
   );
 };

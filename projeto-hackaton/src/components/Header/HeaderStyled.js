@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const MainDiv = styled.div`
+  margin: 0;
+  padding: 0;
   font-family: Nunito, "sans-serif";
 `;
 
@@ -9,9 +11,8 @@ export const HeaderTopDiv = styled.div `
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100vw;
+  width: 90vw;
   height: 15vh;
-  /* border: 1px solid red; */
 `
 
 

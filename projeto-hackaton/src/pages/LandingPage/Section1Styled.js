@@ -12,22 +12,18 @@ export const Box1 = styled.div `
 display: flex;
 align-items: top;
 height: 100vh;
-width: 55vw;
-padding-left: 23vh;
-/* padding-right: 50vw; */
-/* border: 1px solid red; */
+width: 50vw;
+padding-left: 4rem;
 
-& > table h3 {
+& > table h1 {
   display: flex;
   color: rgb(89,73,141,1);
   font-size: 2.25rem;
   text-align: justify;
   line-height: 3rem;
   padding-top: 12vh;
-  /* height: 9rem; */
-  /* padding-left: 23vh; */
-  /* padding-right: 36vw; */
-  margin-bottom: 0;
+  margin-bottom: 1vh;
+  
   
 }
 
@@ -35,9 +31,7 @@ padding-left: 23vh;
   display: flex;
   text-align: justify;
   line-height: 1.4rem;
-  margin-top: 0;
-  /* padding-left: 23vh; */
-  /* padding-right: 78vh; */
+  padding-bottom: 2.5rem;
 }
 `;
 
@@ -57,9 +51,7 @@ font-size: 1.5rem;
 font-weight: bold;
 
 margin: 0 auto;
-margin-top: 2.5rem;
-    /* justify-content: space-evenly; */
-    /* font-family: Nunito, "sans-serif"; */
+
     
     &:hover {
       cursor: pointer;
@@ -70,11 +62,16 @@ margin-top: 2.5rem;
       background-color: rgb(131, 153, 254);
     }
 `
-export const Box2 = styled.div`
+export const Img = styled.div`
 display: flex;
-width: 35vw;
-padding-top: 12rem;
-/* border: 1px solid blue; */
+padding-left: 5rem;
+
+
+& > img {
+  padding-top: 8rem;
+  width: 22rem;
+  
+}
 
 
 

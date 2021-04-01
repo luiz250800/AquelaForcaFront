@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
 export const MainDiv = styled.div`
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Nunito, "sans-serif";
 `;
+
+export const FirstInfoDiv = styled.div`
+
+h2 {
+  color: rgb(89,73,141,1)
+}
+
+`
 
 export const InfoDiv = styled.div`
   display: flex;
@@ -12,9 +23,23 @@ export const InfoDiv = styled.div`
   height: 85vh;
   width: 50vw;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px;
 `;
+
+export const Img = styled.div`
+display: flex;
+align-items: center;
+
+& > img {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 6px 4px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+` 
 
 export const SecondaryInfoDiv = styled.div`
   display: flex;
@@ -124,8 +149,16 @@ export const TerciaryInfoDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 0.8rem;
+  padding-bottom: 2rem;
 
   h4 {
     margin: 0;
   }
+
+  p {
+    text-align: justify;
+  }
 `;
+
+

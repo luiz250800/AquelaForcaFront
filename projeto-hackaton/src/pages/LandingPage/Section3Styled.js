@@ -9,10 +9,7 @@ export const MainDiv = styled.div`
   align-items: center;
   width: 100vw;
 
-  margin-bottom: 8rem;
-  border: 1px solid red;
-  
-
+padding-bottom: 4rem;
 `;
 
 //B O X 1
