@@ -5,26 +5,82 @@ export const MainDiv = styled.div`
   padding: 0;
   display: flex;
   
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100vw;
 
 padding-bottom: 4rem;
 `;
 
-//B O X 1
-export const Box1 = styled.div`
+//SIDEBAR
+export const BoxPartners = styled.div`
 display: flex;
 flex-direction: column;
-padding: 5rem 2.5rem;
+align-items: center;
+width: 100vw;
+height: 10rem;
+padding-left: 2rem;
+margin-bottom: 4rem;
+/* border: 1px red solid; */
+
+& > h1 {
+  padding-bottom: 2rem;
+}
+
+& > sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 4rem;
+
+  & > img {
+    width: 8rem;
+  }
+
+  & > icon1 {
+    color: rgb(244,208,111,1);
+    transform: rotate(180deg);
+  }
+
+  & > icon2 {
+    color: rgb(244,208,111,1);
+  }
+}
+`
+
+
+//FORM MAIN DIV
+export const FormBox = styled.div`
+display: flex;
+flex-direction: row;
+border: 1px solid red;
+`
+
+//FORMULARY
+export const Formulary = styled.div`
+display: flex;
+flex-direction: column;
+margin-top: 2rem;
+margin-bottom: 2rem;
+margin-left: 2rem;
+padding: 0 2rem 2rem 2rem;
 width: 40%;
 height: 100%;
-/* background-color: red; */
+background-color: rgb(180,233,227,1);
+border-radius: 10px;
+
+& > h1 {
+  color: rgb(89,73,141,1);
+}
+
 
 & > form {
   display:flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  /* background-color: rgb(180,233,227,1); */
   /* border: 1px solid green; */
   border: 0;
   
@@ -44,12 +100,13 @@ height: 100%;
 & > form > button {
   text-decoration: none;
   color: #FFF;
-  background-color: #4588D9;
+  background-color: rgb(89,73,141,1);
   width: 50%;
   padding: 5px 10px;
   position: relative;
   transition: all 0.6s ease;
   cursor: pointer;
+  border-radius: 10px;
 
 & > form > button:hover {
   transition: all 0.6s ease;
@@ -60,9 +117,9 @@ height: 100%;
 }
 
 `
-//B O X 2
-export const Box2 = styled.div`
-width: 60%;
+//MESSAGE
+export const Message = styled.div`
+width: 50%;
 height: 100%;
 padding: 7rem 7rem 0 7rem;
 /* font-family: 'Nunito Sans', sans-serif; */
