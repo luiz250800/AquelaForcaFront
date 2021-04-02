@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import {
   MainDiv,
   TitleDiv,
@@ -11,8 +11,45 @@ import {
 } from "./Styled";
 import { IoMdPerson } from "react-icons/io";
 import { FaGraduationCap } from "react-icons/fa";
+import api from "../../services/api";
 
 const SchoolRegisterPage = () => {
+
+  const [states, setStates] = useState('');
+  const [cities, setCities] = useState('');
+
+  useEffect(() => {
+    api.get('/api/locality/states').then(response => {
+      const listStates = response.data;
+      setStates(listStates)
+    })
+  }, [])
+
+  async function listCities(state) {
+    await api.get(`/api/locality/cities/${state}`).then(response => {
+      const listCities = response.data;
+      setCities(listCities)
+    })
+
+    addCitiesInSelect()
+  }
+
+  function addStatesInSelect() {
+    const options = [];
+    for (const state of states) {
+      options.push(<option value={state.id}>{state.nome}</option>)
+    }
+    return options;
+  }
+
+  function addCitiesInSelect() {
+    const options = [];
+    for (const city of cities) {
+      options.push(<option value={city.id}>{city.nome}</option>)
+    }
+    return options;
+  }
+
   return (
     <MainDiv>
       <TitleDiv>
@@ -34,20 +71,18 @@ const SchoolRegisterPage = () => {
         <SelectsDiv>
           <label>
             Estado
-            <select id="estado" name="estado">
-              <option selected disabled />
-              <option> Rio de Janeiro </option>
-              <option> São Paulo </option>
-              <option> Acre </option>
+            <select id="estado" name="estado" onChange={(e) => {
+              listCities(e.target.value)
+            }}>
+              <option value="" selected>Selecione um Estado</option>
+              {addStatesInSelect()}
             </select>
           </label>
           <label>
             Cidade
             <select>
-              <option selected disabled />
-              <option> Rio de Janeiro </option>
-              <option> São Paulo </option>
-              <option> Rio Branco </option>
+              <option value="" selected>Selecione uma cidade</option>
+              {addCitiesInSelect()}
             </select>
           </label>
         </SelectsDiv>
