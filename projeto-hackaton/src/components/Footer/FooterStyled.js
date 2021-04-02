@@ -3,17 +3,14 @@ import styled from "styled-components";
 export const MainDiv = styled.div`
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  font-family: Nunito, "sans-serif";
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
   width: 100vw;
-  height: 34%;
+  height: 15rem;
   padding-bottom: 2rem;
   background-color: rgb(89,73,141,1);
-  align-items: center;
+  border: 1px solid green;
 
  
 `;
@@ -25,37 +22,29 @@ export const ContactUs = styled.div`
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  width: 96vw;
-  /* border: 1px solid white; */
+  width: 70%;
+  padding-left: 4rem;
+  
 
-  & > h1 {
+  & > p {
+    display: flex;
+
     color: white;
-    padding-left: 2rem;
-    padding-top: 1rem;
+    line-height: 0.2rem;
+  }
+
+  & > h1, a {
+    color: white;
   }
 
 
 `;
 
-export const SocialMedia = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-/* border: 1px solid white; */
 
-& > a, p {
-    color: white;
-  }
-`
-
-export const Copy = styled.div`
+export const WhatsIcon = styled.div`
 display: flex;
-flex-direction: column;
-text-align: right;
-color: white;
-font-size: 10px;
-padding-top: 4rem;
-padding-right: 2rem;
+align-content: flex-end;
+
 `
 
 
