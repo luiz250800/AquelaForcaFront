@@ -35,7 +35,8 @@ padding-left: 4rem;
 }
 `;
 
-export const DonnorButton = styled.div `
+export const DonnorButton = styled.a `
+text-decoration: none;
 display: flex;
 align-items: center;
 justify-content: center;

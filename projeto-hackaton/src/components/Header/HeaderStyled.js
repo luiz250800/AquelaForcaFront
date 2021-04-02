@@ -6,7 +6,7 @@ export const MainDiv = styled.div`
   font-family: Nunito, "sans-serif";
 `;
 
-export const HeaderTopDiv = styled.div `
+export const HeaderTopDiv = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -18,7 +18,8 @@ export const HeaderTopDiv = styled.div `
 
 
 //L O G O 
-export const Logo = styled.p`
+export const Logo = styled.a`
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,8 +93,9 @@ font-weight: 700;
     color: black;
   }
 `;
-  
-  export const RegisterButton = styled.button`
+
+export const RegisterA = styled.a`
+    text-decoration: none;
     display: flex;
     align-items: center;
     background-color: rgb(255,136,17,1);

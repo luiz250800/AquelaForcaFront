@@ -25,7 +25,8 @@ export const ButtonsDiv = styled.div`
   justify-content: space-around;
 `;
 
-export const RoleButton = styled.button`
+export const RoleA = styled.a`
+  text-decoration: none;
   display: flex;
   height: 45px;
   width: 150px;

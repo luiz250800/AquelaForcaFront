@@ -6,7 +6,7 @@ import {
   AboutUs,
   Partners,
   Contact,
-  RegisterButton,
+  RegisterA,
 
 } from "./HeaderStyled";
 
@@ -15,13 +15,12 @@ const Header = () => {
   return (
     <MainDiv>
       <HeaderTopDiv>
-      <Logo>      Logo      </Logo>
+      <Logo href={"/"}>      Logo      </Logo>
       <AboutUs>         Sobre Nós      </AboutUs>
       <Partners>        Parceiros      </Partners>
       <Contact>        Contato      </Contact>
-      <RegisterButton>Cadastro</RegisterButton>
+      <RegisterA href={"/cadastro/responsavel"}>Cadastro</RegisterA>
       </HeaderTopDiv>
-
     </MainDiv>
   );
 };
