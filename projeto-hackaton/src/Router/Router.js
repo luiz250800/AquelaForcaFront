@@ -6,6 +6,7 @@ import LandingPage from "../pages/LandingPage/LandingPage";
 import ParentRegisterPage from "../pages/ParentRegisterPage/ParentRegisterPage";
 import SchoolRegisterPage from "../pages/SchoolRegisterPage/SchoolRegisterPage";
 import SearchStudentPage from "../pages/SearchStudentPage/SearchStudentPage";
+import ListStudentPage from "../pages/ListStudentPage/ListStudentPage";
 import StudentRegisterPage from "../pages/StudentRegisterPage/StudentRegisterPage";
 
 const Router = () => {
@@ -29,6 +30,9 @@ const Router = () => {
         </Route>
         <Route exact path="/busca/estudante">
           <SearchStudentPage />
+        </Route>
+        <Route exact path="/lista/estudante">
+          <ListStudentPage />
         </Route>
         <Route>
           <ErrorPage />

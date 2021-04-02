@@ -2,27 +2,23 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
 margin: 0;
+margin-bottom: 4rem;
 padding: 0;
-width: 100vw;
-height: 31rem;
-
+height: 100%;
 display: flex;
 align-items: center;
-
 `
 
 export const Box1 = styled.div`
-
-width: 100vw;
-height: 60%;
+margin: 0;
+height: 20rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: justify;
 background-color: rgb(89,73,141,1);
-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-padding: 0 8rem 0 36rem;
-z-index: 2;
+box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+padding: 0 5% 0 38%;
 
 & > h1 {
     color: white;
@@ -37,7 +33,6 @@ z-index: 2;
 export const Image = styled.div`
 margin: 0;
 padding: 0;
-
 position: absolute;
 z-index: 100;
 
@@ -46,8 +41,7 @@ z-index: 100;
     height: 26rem;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 4rem;
-    /* box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    margin: 0 3rem;
     box-shadow: 6px 4px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 26px 0 rgba(0, 0, 0, 0.19);
     
 }
