@@ -1,10 +1,14 @@
 import React from "react";
+import { MainDiv, MessageDiv } from "./Styled";
 
 const ErrorPage = () => {
   return (
-    <div>
-      <p> Página de erro </p>
-    </div>
+    <MainDiv>
+      <MessageDiv>
+        <p> Ops... essa página não existe.</p>
+        <p> :'( </p>
+      </MessageDiv>
+    </MainDiv>
   );
 };
 
