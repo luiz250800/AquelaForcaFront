@@ -50,6 +50,7 @@ border-radius: 10px;
 color: rgb(255,248,240,1);
 font-size: 1.5rem;
 font-weight: bold;
+transition: all 0.3s ease;
 
 margin: 0 auto;
 
@@ -57,6 +58,9 @@ margin: 0 auto;
     &:hover {
       cursor: pointer;
       background-color: rgb(89,73,141,1);
+      width: 22rem;
+      height: 5rem;
+      font-size: 2rem;
     }
   
     &:active {

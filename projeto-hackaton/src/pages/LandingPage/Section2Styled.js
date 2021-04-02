@@ -14,14 +14,14 @@ align-items: center;
 export const Box1 = styled.div`
 
 width: 100vw;
-height: 80%;
+height: 60%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: justify;
 background-color: rgb(89,73,141,1);
 box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-padding: 0 8rem 0 40rem;
+padding: 0 8rem 0 36rem;
 z-index: 2;
 
 & > h1 {
@@ -42,8 +42,8 @@ position: absolute;
 z-index: 100;
 
 & > img{
-    width: 31rem;
-    height: 31rem;
+    width: 26rem;
+    height: 26rem;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 4rem;
