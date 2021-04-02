@@ -6,7 +6,6 @@ export const MainDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100vw;
   height: 15rem;
   padding-bottom: 2rem;
   background-color: rgb(89,73,141,1);
@@ -33,7 +32,7 @@ export const ContactUs = styled.div`
     line-height: 0.2rem;
   }
 
-  & > h1, a {
+  & > h2, a {
     color: white;
   }
 
