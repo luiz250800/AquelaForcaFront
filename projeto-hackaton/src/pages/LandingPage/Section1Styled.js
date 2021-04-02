@@ -4,34 +4,34 @@ export const MainDiv = styled.div`
   margin: 0;
   padding: 0;
   display: flex;
-  
   flex-direction: row;
+  font-family: Nunito, "sans-serif";
+  
 `;
-
+// CALL TO ACTION 
 export const Box1 = styled.div `
 display: flex;
 align-items: top;
 height: 100vh;
-width: 50vw;
 padding-left: 4rem;
 
-& > table h1 {
+& > table {
   display: flex;
-  color: rgb(89,73,141,1);
-  font-size: 2.25rem;
-  text-align: justify;
-  line-height: 3rem;
-  padding-top: 12vh;
-  margin-bottom: 1vh;
-  
-  
-}
+  padding-top: 8%;
+  padding-left: 6%;
+  padding-right: 34%;
+  margin-bottom: 1rem;
 
-& > table p {
+  & > td > th {
+        text-align: justify;
+        color: rgb(89,73,141,1);
+        }
+  & > td > tr {
   display: flex;
   text-align: justify;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
   padding-bottom: 2.5rem;
+              }      
 }
 `;
 
@@ -43,7 +43,6 @@ justify-content: center;
 background-color: rgb(255,136,17,1);
 border: none;
 outline: none;
-
 width: 20.4rem;
 height: 3.5rem;
 border-radius: 10px;
@@ -51,7 +50,6 @@ color: rgb(255,248,240,1);
 font-size: 1.5rem;
 font-weight: bold;
 transition: all 0.3s ease;
-
 margin: 0 auto;
 
     
@@ -72,12 +70,14 @@ display: flex;
 padding-left: 5rem;
 
 
+
+// I M A G E M
 & > img {
-  padding-top: 8rem;
-  width: 22rem;
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  width: 30%;
+
   
 }
-
-
-
 `

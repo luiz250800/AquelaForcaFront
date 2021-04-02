@@ -5,41 +5,36 @@ export const MainDiv = styled.div`
   padding: 0;
   text-decoration: none;
   font-family: Nunito, "sans-serif";
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 96vw;
   padding-bottom: 4rem;
-  /* border: 1px solid green; */
 `;
 
-//SIDEBAR
+//S I D E B A R - CONTAINER
 export const BoxPartners = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 100vw;
-height: 10rem;
+height: 13rem;
 padding-left: 2rem;
-margin-bottom: 4rem;
-/* border: 1px red solid; */
+margin-bottom: 2rem;
 
 & > h1 {
   padding-bottom: 2rem;
   color: rgb(89,73,141,1);
 }
 
+//S I D E B A R - I M G S
 & > sidebar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
   height: 4rem;
 
   & > img {
-    width: 8rem;
+    width: 10%;
   }
 
   & > icon1 {
@@ -53,27 +48,24 @@ margin-bottom: 4rem;
 }
 `
 
-//FORM BOX
+//F O R M  C O N T A I N E R
 export const BigBox = styled.div`
 display: flex;
 flex-direction: row;
 align-items:center;
-/* border: 1px solid red; */
-width: 96vw;
 `
 
-//FORMULARY
+//F O R M U L A R Y - 40% DA TELA
 export const Formulary = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 margin: 2rem 1rem;
 padding:  2rem;
-height: 70vh;
-width: 35vw;
+height: 100%;
+width: 40%;
 background-color: rgb(180,233,227,1);
 border-radius: 10px;
-/* border: 1px solid red; */
 
 & > h1 {
   display: flex;
@@ -120,6 +112,7 @@ border-radius: 10px;
   background-color: rgb(89,73,141,1);
   width: 8rem;
   height: 2.5rem;
+  font-size: 1rem;
   text-align:center;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -141,16 +134,15 @@ border-radius: 10px;
     }
 `
 
-//M E S S A G E
+//M E S S A G E - 60% DA TELA
 export const Message = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 text-align: justify;
-width: 50%;
+width: 60%;
 height: 100%;
 padding: 5rem 2.5rem;
-/* border: 1px solid red; */
 
 
 & > p {
