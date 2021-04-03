@@ -130,15 +130,6 @@ const SchoolRegisterPage = () => {
         <RegisterButton type="submit"> Cadastrar </RegisterButton>
       </form>
       <DisclaimerDiv>
-        <h4> Termos informando que o aluno não será exposto </h4>
-        <p>
-          Etiam scelerisque sodales risus, nec rhoncus nunc dignissim non. Nunc
-          placerat nisl eget justo tincidunt facilisis. Nam et justo mi. Nam
-          pellentesque semper suscipit. Aliquam diam leo, bibendum id diam quis,
-          hendrerit congue dolor. Proin sodales nibh diam, non mattis nulla
-          semper eu. Vestibulum risus est, vulputate ut pellentesque vitae,
-          aliquet at risus. Quisque porttitor enim nec iaculis tempor.
-        </p>
       </DisclaimerDiv>
     </MainDiv>
   );
