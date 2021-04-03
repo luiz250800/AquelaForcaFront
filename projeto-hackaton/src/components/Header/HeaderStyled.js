@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 export const MainDiv = styled.div`
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: Nunito, "sans-serif";
-  width: 99vw;
-  padding-right: 4rem;
 `;
 
 export const HeaderTopDiv = styled.div`
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: flex;
   align-items: center;

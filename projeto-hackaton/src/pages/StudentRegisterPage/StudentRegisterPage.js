@@ -10,8 +10,11 @@ import {
   SchoolSelect,
   ButtonsDiv,
   AddButton,
-  NextButton,
+  AddButton2,
+  EndButton,
   TerciaryInfoDiv,
+  ChooseStudentRow,
+  TermInfoDiv,
   Img,
 } from "./Styled";
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
@@ -24,13 +27,15 @@ const StudentRegisterPage = () => {
         <FirstInfoDiv>
           <h2>Preencha os dados sobre o aluno</h2>
         </FirstInfoDiv>
+
+        
         <SecondaryInfoDiv>
           <label>
             Nome do Aluno
             <StudentNameInput />
           </label>
-        </SecondaryInfoDiv>
-        <SecondaryInfoDiv>
+        {/* </SecondaryInfoDiv> */}
+        {/* <SecondaryInfoDiv> */}
           <label>
             R.A
             <StudentRAInput />
@@ -44,8 +49,8 @@ const StudentRegisterPage = () => {
               <option> 3° </option>
             </GradeSelect>
           </label>
-        </SecondaryInfoDiv>
-        <SecondaryInfoDiv>
+        {/* </SecondaryInfoDiv> */}
+        {/* <SecondaryInfoDiv> */}
           <label>
             Escola
             <SchoolSelect>
@@ -56,34 +61,42 @@ const StudentRegisterPage = () => {
             </SchoolSelect>
           </label>
         </SecondaryInfoDiv>
+
+        
+
         <ButtonsDiv>
           <AddButton>
             <AiOutlineUserAdd size="20px" /> Adicionar Aluno
           </AddButton>
-          <AddButton>
-            <AiOutlinePlus size="20px" /> Adicionar Material
-          </AddButton>
+          <EndButton> Finalizar </EndButton>
         </ButtonsDiv>
-        <ButtonsDiv>
-          <NextButton> Próximo </NextButton>
-        </ButtonsDiv>
+  
         <TerciaryInfoDiv>
-          <h4> Termos informando que o aluno não será exposto </h4>
+          <ChooseStudentRow>
+            <p>Aluno 01 - R.A: 1589985</p>
+            <AddButton2><AiOutlinePlus />Adicionar Material</AddButton2>
+          </ChooseStudentRow>
+
+          <ChooseStudentRow>
+            <p>Aluno 01 - R.A: 1589985</p>
+            <AddButton2><AiOutlinePlus />Adicionar Material</AddButton2>
+          </ChooseStudentRow>
+        </TerciaryInfoDiv>
+
+
+        <TermInfoDiv>
+          <h4> Anonimidade do aluno </h4>
           <p>
             {" "}
-            Etiam scelerisque sodales risus, nec rhoncus nunc dignissim non.
-            Nunc placerat nisl eget justo tincidunt facilisis. Nam et justo mi.
-            Nam pellentesque semper suscipit. Aliquam diam leo, bibendum id diam
-            quis, hendrerit congue dolor. Proin sodales nibh diam, non mattis
-            nulla semper eu. Vestibulum risus est, vulputate ut pellentesque
-            vitae, aliquet at risus. Quisque porttitor enim nec iaculis tempor.{" "}
+            Por motivos de ética e segurança, qualquer aluno cadastrado neste sistema 
+            será anônimo para para proteção da criança.{" "}
           </p>
-        </TerciaryInfoDiv>
-        
+        </TermInfoDiv>
       </InfoDiv>
+      
       <Img>
-    <img src={imgBabyDraw} className="imgBabyDraw"/>
-    </Img>
+        <img src={imgBabyDraw} className="imgBabyDraw"/>
+      </Img>
     </MainDiv>
   );
 };

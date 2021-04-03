@@ -21,6 +21,7 @@ text-align: justify;
 background-color: rgb(89,73,141,1);
 box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 padding: 0 5% 0 38%;
+border-radius: 10px;
 
 & > h1 {
     color: white;
