@@ -17,7 +17,7 @@ padding-left: 4rem;
 
 & > table {
   display: flex;
-  padding-top: 8%;
+  padding-top: 6%;
   padding-left: 6%;
   padding-right: 34%;
   margin-bottom: 1rem;
