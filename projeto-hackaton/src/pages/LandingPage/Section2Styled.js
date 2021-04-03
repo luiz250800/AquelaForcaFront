@@ -12,6 +12,7 @@ align-items: center;
 
 export const Box1 = styled.div`
 margin: 0;
+width: 100%;
 height: 20rem;
 display: flex;
 flex-direction: column;

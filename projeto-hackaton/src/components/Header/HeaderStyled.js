@@ -118,25 +118,34 @@ export const RegisterA = styled.a`
 export const LoginA = styled.a`
     text-decoration: none;
     display: flex;
-    width: 8rem;
-    height: 3rem;
     border-radius: 10px;
     align-items: center;
     justify-content: space-evenly;
+    color: rgb(89,73,141,1) !important;
+    font-size: 1.2rem;
     background-color: #fff8f0;
-    color: #59498d;
     border: 2px solid #59498d;
     outline: none;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    justify-content: center;
+    transition: all 0.3s ease;
 
     &:hover {
       cursor: pointer;
       background-color: #59498d;
-      color: #fff8f0;
+      color: #fff8f0 !important;
+      width: 8.5rem;
+      height: 3.5rem;
+      font-size: 1.3rem;
     }
 
     &:active {
       background-color: #fff8f0;
-      color: #59498d;
+      color: #fff8f0;
     }
   `;
 

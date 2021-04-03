@@ -13,17 +13,14 @@ export const MainDiv = styled.div`
   border: 1px solid green;
 `;
 
-
-
-// F A L E   C O N O S C O
 export const ContactUs = styled.div`
+  color: #FFFF;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   width: 70%;
   padding-left: 4rem;
   
-
   & > p {
     display: flex;
 
@@ -34,15 +31,12 @@ export const ContactUs = styled.div`
   & > h1, a {
     color: white;
   }
-
-
 `;
 
 
 export const WhatsIcon = styled.div`
 display: flex;
 align-content: flex-end;
-
 `
 
 

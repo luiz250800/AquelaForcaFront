@@ -63,7 +63,7 @@ align-items: center;
 margin: 2rem 1rem;
 padding:  2rem;
 height: 100%;
-width: 40%;
+width: 100%;
 background-color: rgb(180,233,227,1);
 border-radius: 10px;
 
