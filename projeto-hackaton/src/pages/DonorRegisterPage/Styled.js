@@ -59,3 +59,58 @@ export const GenerateBilletButton = styled.button`
     background-color: #59498d;
   }
 `;
+
+
+// MODAL - POPUP - CSS
+
+export const Modal = styled.div`
+margin: 0 auto;
+padding: 0 1rem;
+font-family: Nunito, "sans-serif";
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+text-align: center;
+width: 500px;
+height: 500px;
+&:overlay {
+  background-color: red;
+}
+
+& > h1 {
+  color: rgb(89,73,141,1);
+}
+
+& > h2 {
+  color: rgb(255,136,17,1);
+}
+`
+
+export const ModalButton = styled.div`
+  
+  display: flex;
+  height: 48px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #59498d;
+  transition: 0.3s;
+  color: #fff8f0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255,136,17,1);
+    font-size: 1.2rem;
+  }
+
+  &:active {
+    background-color: #59498d;
+  }
+`;
+
