@@ -11,6 +11,7 @@ import {
 } from "./Styled";
 import { IoMdPerson } from "react-icons/io";
 import { FaGraduationCap } from "react-icons/fa";
+import Header from "../../components/Header/Header";
 import api from "../../services/api";
 
 const SchoolRegisterPage = () => {
@@ -82,56 +83,59 @@ const SchoolRegisterPage = () => {
   }
 
   return (
-    <MainDiv>
-      <TitleDiv>
-        <h3> Vamos começar cadastrando algumas informações: </h3>
-      </TitleDiv>
-      <ButtonsDiv>
-        <RoleA href={"/cadastro/responsavel"}>
-          <IoMdPerson size="20px" /> Responsável
+    <div>
+      <Header />
+      <MainDiv>
+        <TitleDiv>
+          <h3> Vamos começar cadastrando algumas informações: </h3>
+        </TitleDiv>
+        <ButtonsDiv>
+          <RoleA href={"/cadastro/responsavel"}>
+            <IoMdPerson size="20px" /> Responsável
         </RoleA>
-        <RoleA href={"/cadastro/escola"}>
-          <FaGraduationCap size="20px" /> Escolas
+          <RoleA href={"/cadastro/escola"}>
+            <FaGraduationCap size="20px" /> Escolas
         </RoleA>
-      </ButtonsDiv>
-      <form onSubmit={registerSchool}>
-        <InputsDiv>
-          <label>
-            Nome da Escola
-          <input type="text" name="nmSchool" id="nmSchool"/>
-          </label>
-          <SelectsDiv>
+        </ButtonsDiv>
+        <form onSubmit={registerSchool}>
+          <InputsDiv>
             <label>
-              Estado
+              Nome da Escola
+          <input type="text" name="nmSchool" id="nmSchool" />
+            </label>
+            <SelectsDiv>
+              <label>
+                Estado
             <select id="idState" name="idState" onChange={(e) => {
-                listCities(e.target.value)
-              }}>
-                <option value="" selected>Selecione um Estado</option>
-                {addStatesInSelect()}
-              </select>
+                  listCities(e.target.value)
+                }}>
+                  <option value="" selected>Selecione um Estado</option>
+                  {addStatesInSelect()}
+                </select>
+              </label>
+              <label>
+                Cidade
+            <select id="idCity" name="idCity">
+                  <option value="" selected>Selecione uma cidade</option>
+                  {addCitiesInSelect()}
+                </select>
+              </label>
+            </SelectsDiv>
+            <label>
+              Endereço
+          <input id="nmEndereco" name="nmEndereco" />
             </label>
             <label>
-              Cidade
-            <select id="idCity" name="idCity">
-                <option value="" selected>Selecione uma cidade</option>
-                {addCitiesInSelect()}
-              </select>
+              Número
+          <input id="nrEndereco" name="nrEndereco" />
             </label>
-          </SelectsDiv>
-          <label>
-            Endereço
-          <input id="nmEndereco" name="nmEndereco"/>
-          </label>
-          <label>
-            Número
-          <input id="nrEndereco" name="nrEndereco"/>
-          </label>
-        </InputsDiv>
-        <RegisterButton type="submit"> Cadastrar </RegisterButton>
-      </form>
-      <DisclaimerDiv>
-      </DisclaimerDiv>
-    </MainDiv>
+          </InputsDiv>
+          <RegisterButton type="submit"> Cadastrar </RegisterButton>
+        </form>
+        <DisclaimerDiv>
+        </DisclaimerDiv>
+      </MainDiv>
+    </div>
   );
 };
 

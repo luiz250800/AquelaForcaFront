@@ -8,6 +8,7 @@ import {
   ButtonDiv,
   SearchStudentButton,
 } from "./Styled";
+import Header from "../../components/Header/Header";
 import api from "../../services/api";
 
 const SearchStudentPage = () => {
@@ -102,48 +103,51 @@ const SearchStudentPage = () => {
   }
 
   return (
-    <MainDiv>
-      <form onSubmit={listStudents}>
-        <InfoDiv>
-          <TitleDiv>
-            <p>Buscar aluno</p>
-          </TitleDiv>
-          <SelectDiv>
-            <label for="estado">Estado</label>
-            <select id="estado" name="estado" onChange={(e) => {
-              listCities(e.target.value)
-              listSchools()
-            }}>
-              <option value="" selected>Selecione um estado</option>
-              {addStatesInSelect()}
-            </select>
-            <label> Cidade </label>
-            <select id="cidade" name="cidade" onChange={() => {
-              listSchools()
-            }}>
-              <option value="" selected>Selecione uma cidade</option>
-              {addCitiesInSelect()}
-            </select>
-          </SelectDiv>
-          <SelectDiv>
-            <label> Série </label>
-            <select id="grade" name="grade">
-              <option value="" selected>Selecione uma série</option>
-              {addGradesInSelect()}
-            </select>
-            <label> Escola </label>
-            <select id="school" name="school">
-              <option value="" selected>Selecione uma escola</option>
-              {addSchoolsInSelect()}
-            </select>
-          </SelectDiv>
-          <ButtonDiv>
-            <SearchStudentButton> Buscar Aluno </SearchStudentButton>
-          </ButtonDiv>
+    <div>
+      <Header />
+      <MainDiv>
+        <form onSubmit={listStudents}>
+          <InfoDiv>
+            <TitleDiv>
+              <p>Buscar aluno</p>
+            </TitleDiv>
+            <SelectDiv>
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado" onChange={(e) => {
+                listCities(e.target.value)
+                listSchools()
+              }}>
+                <option value="" selected>Selecione um estado</option>
+                {addStatesInSelect()}
+              </select>
+              <label> Cidade </label>
+              <select id="cidade" name="cidade" onChange={() => {
+                listSchools()
+              }}>
+                <option value="" selected>Selecione uma cidade</option>
+                {addCitiesInSelect()}
+              </select>
+            </SelectDiv>
+            <SelectDiv>
+              <label> Série </label>
+              <select id="grade" name="grade">
+                <option value="" selected>Selecione uma série</option>
+                {addGradesInSelect()}
+              </select>
+              <label> Escola </label>
+              <select id="school" name="school">
+                <option value="" selected>Selecione uma escola</option>
+                {addSchoolsInSelect()}
+              </select>
+            </SelectDiv>
+            <ButtonDiv>
+              <SearchStudentButton> Buscar Aluno </SearchStudentButton>
+            </ButtonDiv>
 
-        </InfoDiv>
-      </form>
-    </MainDiv>
+          </InfoDiv>
+        </form>
+      </MainDiv>
+    </div>
   );
 };
 

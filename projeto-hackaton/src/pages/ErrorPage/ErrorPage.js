@@ -1,14 +1,18 @@
 import React from "react";
 import { MainDiv, MessageDiv } from "./Styled";
+import Header from "../../components/Header/Header";
 
 const ErrorPage = () => {
   return (
-    <MainDiv>
-      <MessageDiv>
-        <p> Ops... essa página não existe.</p>
-        <p> :'( </p>
-      </MessageDiv>
-    </MainDiv>
+    <div>
+      <Header />
+      <MainDiv>
+        <MessageDiv>
+          <p> Ops... essa página não existe.</p>
+          <p> :'( </p>
+        </MessageDiv>
+      </MainDiv>
+    </div>
   );
 };
 
