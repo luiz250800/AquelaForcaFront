@@ -16,9 +16,9 @@ const Header = () => {
     <MainDiv>
       <HeaderTopDiv>
       <Logo href={"/"}>      Logo      </Logo>
-      <AboutUs>         Sobre Nós      </AboutUs>
-      <Partners>        Parceiros      </Partners>
-      <Contact>        Contato      </Contact>
+      <AboutUs href={"/"}>         Sobre Nós      </AboutUs>
+      <Partners href={"/"}>        Parceiros      </Partners>
+      <Contact href={"/"}>        Contato      </Contact>
       <LoginA>Login</LoginA>
       <RegisterA href={"/cadastro/responsavel"}>Cadastro</RegisterA>
       </HeaderTopDiv>

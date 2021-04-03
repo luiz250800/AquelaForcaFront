@@ -19,6 +19,7 @@ const Router = () => {
         <Route exact path="/cadastro/doador">
           <DonorRegisterPage />
         </Route>
+        
         <Route exact path="/cadastro/responsavel">
           <ParentRegisterPage />
         </Route>
