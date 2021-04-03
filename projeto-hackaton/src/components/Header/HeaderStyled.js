@@ -4,6 +4,8 @@ export const MainDiv = styled.div`
   margin: 0;
   padding: 0;
   font-family: Nunito, "sans-serif";
+  width: 99vw;
+  padding-right: 4rem;
 `;
 
 export const HeaderTopDiv = styled.div`
@@ -111,6 +113,30 @@ export const RegisterA = styled.a`
   
     &:active {
       background-color: rgb(131, 153, 254);
+    }
+  `;
+export const LoginA = styled.a`
+    text-decoration: none;
+    display: flex;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff8f0;
+    color: #59498d;
+    border: 2px solid #59498d;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #59498d;
+      color: #fff8f0;
+    }
+
+    &:active {
+      background-color: #fff8f0;
+      color: #59498d;
     }
   `;
 

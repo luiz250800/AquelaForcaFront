@@ -1,11 +1,11 @@
-import {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import {
   MainDiv,
   TitleDiv,
   ButtonsDiv,
   RoleA,
   InputsDiv,
-  NextButton,
+  RegisterButton,
   DisclaimerDiv,
   SelectsDiv,
 } from "./Styled";
@@ -50,6 +50,37 @@ const SchoolRegisterPage = () => {
     return options;
   }
 
+  function registerSchool(e) {
+    e.preventDefault();
+
+    const nmSchool = document.getElementById('nmSchool').value;
+    const idState = document.getElementById('idState').value;
+    const idCity = document.getElementById('idCity').value;
+    const nmEndereco = document.getElementById('nmEndereco').value;
+    const nrEndereco = document.getElementById('nrEndereco').value;
+
+    if (nmSchool && idState && idCity && nmEndereco && nrEndereco) {
+      api.post('/api/school/register', {
+        nmSchool,
+        idState,
+        idCity,
+        nmEndereco,
+        nrEndereco
+      }).then(() => {
+        alert('Cadastro Realizado com sucesso!')
+        document.getElementById('nmSchool').value = "";
+        document.getElementById('idState').value = "";
+        document.getElementById('idCity').value = "";
+        document.getElementById('nmEndereco').value = "";
+        document.getElementById('nrEndereco').value = "";
+      }).catch(() => {
+        alert('Erro ao cadastrar');
+      })
+    } else {
+      alert('Preencha todos os campos')
+    }
+  }
+
   return (
     <MainDiv>
       <TitleDiv>
@@ -63,39 +94,41 @@ const SchoolRegisterPage = () => {
           <FaGraduationCap size="20px" /> Escolas
         </RoleA>
       </ButtonsDiv>
-      <InputsDiv>
-        <label>
-          Nome da Escola
-          <input />
-        </label>
-        <SelectsDiv>
+      <form onSubmit={registerSchool}>
+        <InputsDiv>
           <label>
-            Estado
-            <select id="estado" name="estado" onChange={(e) => {
-              listCities(e.target.value)
-            }}>
-              <option value="" selected>Selecione um Estado</option>
-              {addStatesInSelect()}
-            </select>
+            Nome da Escola
+          <input type="text" name="nmSchool" id="nmSchool"/>
+          </label>
+          <SelectsDiv>
+            <label>
+              Estado
+            <select id="idState" name="idState" onChange={(e) => {
+                listCities(e.target.value)
+              }}>
+                <option value="" selected>Selecione um Estado</option>
+                {addStatesInSelect()}
+              </select>
+            </label>
+            <label>
+              Cidade
+            <select id="idCity" name="idCity">
+                <option value="" selected>Selecione uma cidade</option>
+                {addCitiesInSelect()}
+              </select>
+            </label>
+          </SelectsDiv>
+          <label>
+            Endereço
+          <input id="nmEndereco" name="nmEndereco"/>
           </label>
           <label>
-            Cidade
-            <select>
-              <option value="" selected>Selecione uma cidade</option>
-              {addCitiesInSelect()}
-            </select>
+            Número
+          <input id="nrEndereco" name="nrEndereco"/>
           </label>
-        </SelectsDiv>
-        <label>
-          Endereço
-          <input />
-        </label>
-        <label>
-          Número
-          <input />
-        </label>
-      </InputsDiv>
-      <NextButton> Próximo </NextButton>
+        </InputsDiv>
+        <RegisterButton type="submit"> Cadastrar </RegisterButton>
+      </form>
       <DisclaimerDiv>
         <h4> Termos informando que o aluno não será exposto </h4>
         <p>
