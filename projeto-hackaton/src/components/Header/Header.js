@@ -7,7 +7,7 @@ import {
   Partners,
   Contact,
   RegisterA,
-
+  LoginA
 } from "./HeaderStyled";
 
 
@@ -19,6 +19,7 @@ const Header = () => {
       <AboutUs>         Sobre Nós      </AboutUs>
       <Partners>        Parceiros      </Partners>
       <Contact>        Contato      </Contact>
+      <LoginA>Login</LoginA>
       <RegisterA href={"/cadastro/responsavel"}>Cadastro</RegisterA>
       </HeaderTopDiv>
     </MainDiv>

@@ -69,7 +69,7 @@ export const InputsDiv = styled.div`
   }
 `;
 
-export const NextButton = styled.button`
+export const RegisterButton = styled.button`
   display: flex;
   height: 42px;
   width: 120px;
@@ -90,6 +90,9 @@ export const NextButton = styled.button`
   &:active {
     background-color: #7f6fb4;
   }
+  display: block;
+    margin-left: auto;
+    margin-right: auto
 `;
 
 export const DisclaimerDiv = styled.div`

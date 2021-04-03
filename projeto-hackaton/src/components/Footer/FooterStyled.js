@@ -11,8 +11,6 @@ export const MainDiv = styled.div`
   padding-bottom: 2rem;
   background-color: rgb(89,73,141,1);
   border: 1px solid green;
-
- 
 `;
 
 

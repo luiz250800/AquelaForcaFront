@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import {
   MainDiv,
   InfoDiv,
@@ -10,6 +11,7 @@ import {
 import api from "../../services/api";
 
 const SearchStudentPage = () => {
+  const history = useHistory();
 
   const [states, setStates] = useState('');
   const [cities, setCities] = useState('');
@@ -41,12 +43,12 @@ const SearchStudentPage = () => {
     const state = document.getElementById("estado").value;
     const city = document.getElementById("cidade").value;
 
-    if(state && city) {
+    if (state && city) {
       await api.get(`/api/school/${state}/${city}`).then(response => {
         const listSchools = response.data;
         setSchools(listSchools)
       })
-  
+
       addSchoolsInSelect()
     }
   }
@@ -83,45 +85,64 @@ const SearchStudentPage = () => {
     return options;
   }
 
+  function listStudents(e) {
+    e.preventDefault();
+
+    const school = document.getElementById('school').value;
+    const grade = document.getElementById('grade').value;
+
+    if (school && grade) {
+      api.get(`/api/student/schoolGrade/${school}/${grade}`).then((response) => {
+      }).catch(() => {
+        alert('Erro ao buscar alunos');
+      })
+    } else {
+      alert('Preencha todos os campos')
+    }
+  }
+
   return (
     <MainDiv>
-      <InfoDiv>
-        <TitleDiv>
-          <p>Buscar aluno</p>
-        </TitleDiv>
-        <SelectDiv>
-          <label for="estado">Estado</label>
-          <select id="estado" name="estado" onChange={(e) => {
-            listCities(e.target.value)
-            listSchools()
-          }}>
-            <option value="" selected>Selecione um estado</option>
-            {addStatesInSelect()}
-          </select>
-          <label> Cidade </label>
-          <select id="cidade" name="cidade" onChange={() => {
-            listSchools()
-          }}>
-            <option value="" selected>Selecione uma cidade</option>
-            {addCitiesInSelect()}
-          </select>
-        </SelectDiv>
-        <SelectDiv>
-          <label> Série </label>
-          <select>
-            <option value="" selected>Selecione uma série</option>
-            {addGradesInSelect()}
-          </select>
-          <label> Escola </label>
-          <select>
-            <option value="" selected>Selecione uma escola</option>
-            {addSchoolsInSelect()}
-          </select>
-        </SelectDiv>
-        <ButtonDiv>
-          <SearchStudentButton> Buscar Aluno </SearchStudentButton>
-        </ButtonDiv>
-      </InfoDiv>
+      <form onSubmit={listStudents}>
+        <InfoDiv>
+          <TitleDiv>
+            <p>Buscar aluno</p>
+          </TitleDiv>
+          <SelectDiv>
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" onChange={(e) => {
+              listCities(e.target.value)
+              listSchools()
+            }}>
+              <option value="" selected>Selecione um estado</option>
+              {addStatesInSelect()}
+            </select>
+            <label> Cidade </label>
+            <select id="cidade" name="cidade" onChange={() => {
+              listSchools()
+            }}>
+              <option value="" selected>Selecione uma cidade</option>
+              {addCitiesInSelect()}
+            </select>
+          </SelectDiv>
+          <SelectDiv>
+            <label> Série </label>
+            <select id="grade" name="grade">
+              <option value="" selected>Selecione uma série</option>
+              {addGradesInSelect()}
+            </select>
+            <label> Escola </label>
+            <select id="school" name="school">
+              <option value="" selected>Selecione uma escola</option>
+              {addSchoolsInSelect()}
+            </select>
+          </SelectDiv>
+          <ButtonDiv>
+            <SearchStudentButton> Buscar Aluno </SearchStudentButton>
+          </ButtonDiv>
+
+        </InfoDiv>
+      </form>
     </MainDiv>
   );
 };
