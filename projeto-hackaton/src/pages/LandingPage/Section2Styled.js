@@ -4,7 +4,8 @@ export const MainDiv = styled.div`
 margin: 0;
 margin-bottom: 4rem;
 padding: 0;
-height: 100%;
+width: 95vw;
+height: 31rem;
 display: flex;
 align-items: center;
 `
