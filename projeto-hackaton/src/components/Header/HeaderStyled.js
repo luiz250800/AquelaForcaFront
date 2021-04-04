@@ -150,4 +150,72 @@ export const LoginA = styled.a`
     }
   `;
 
+export const ModalButton = styled.div`
+  
+  display: flex;
+  height: 48px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #59498d;
+  transition: 0.3s;
+  color: #fff8f0;
+  margin-top: 50px;
+  margin-bottom: 50px;
 
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255,136,17,1);
+    font-size: 1.2rem;
+  }
+
+  &:active {
+    background-color: #59498d;
+  }
+`;
+
+export const InputsDiv = styled.div`
+  display: flex;
+  height: 60%;
+  width: 60%;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  input {
+    height: 20px;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+`;
+
+export const LoginButton = styled.button`
+  display: flex;
+  height: 42px;
+  width: 120px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #59498d;
+  color: #fff8f0;
+  border: none;
+  outline: none;
+  margin: 30px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #392f5a;
+  }
+
+  &:active {
+    background-color: #7f6fb4;
+  }
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+`;

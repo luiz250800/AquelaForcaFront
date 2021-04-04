@@ -51,7 +51,7 @@ const SchoolRegisterPage = () => {
     return options;
   }
 
-  function registerSchool(e) {
+  async function registerSchool(e) {
     e.preventDefault();
 
     const nmSchool = document.getElementById('nmSchool').value;
@@ -61,7 +61,7 @@ const SchoolRegisterPage = () => {
     const nrEndereco = document.getElementById('nrEndereco').value;
 
     if (nmSchool && idState && idCity && nmEndereco && nrEndereco) {
-      api.post('/api/school/register', {
+      await api.post('/api/school/register', {
         nmSchool,
         idState,
         idCity,

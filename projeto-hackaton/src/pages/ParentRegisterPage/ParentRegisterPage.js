@@ -17,7 +17,7 @@ import api from "../../services/api";
 const ParentRegisterPage = () => {
   const history = useHistory();
 
-  function registerResponsible(e) {
+  async function registerResponsible(e) {
     e.preventDefault();
 
     const nmResponsible = document.getElementById('nmResponsible').value;
@@ -25,13 +25,13 @@ const ParentRegisterPage = () => {
     const nmPassword = document.getElementById('nmPassword').value;
 
     if (nmResponsible && nmEmail && nmPassword) {
-      api.post('/api/responsible/register', {
+      await api.post('/api/responsible/register', {
         nmResponsible,
         nmEmail,
         nmPassword
-      }).then(() => {
+      }).then((response) => {
         alert('Cadastro Realizado com sucesso!')
-        history.push('/cadastro/estudante');
+        history.push({pathname: '/cadastro/estudante', responsible: response.data.responsible._id});
       }).catch(() => {
         alert('Erro ao cadastrar');
       })
