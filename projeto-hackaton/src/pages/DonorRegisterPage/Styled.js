@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
+  font-family: Nunito, "sans-serif";
 `;
 
 export const InfoDiv = styled.div`
@@ -10,13 +11,16 @@ export const InfoDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 70vh;
+  height: 100vh;
   width: 50vw;
 `;
 
 export const TitleDiv = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  & > h3{
+    color: rgb(89,73,141,1);
+    font-size: 2rem;
+  }
 `;
 
 export const InputsDiv = styled.div`
@@ -64,19 +68,16 @@ export const GenerateBilletButton = styled.button`
 // MODAL - POPUP - CSS
 
 export const Modal = styled.div`
-margin: 0 auto;
-padding: 0 1rem;
-font-family: Nunito, "sans-serif";
+  margin: 0 auto;
+`
+
+export const ModalContent = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-evenly;
+justify-content: center;
 text-align: center;
-width: 500px;
-height: 500px;
-&:overlay {
-  background-color: red;
-}
+font-family: Nunito, "sans-serif";
 
 & > h1 {
   color: rgb(89,73,141,1);
@@ -87,8 +88,7 @@ height: 500px;
 }
 `
 
-export const ModalButton = styled.div`
-  
+export const ModalButton = styled.button`
   display: flex;
   height: 48px;
   width: 200px;
