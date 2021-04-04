@@ -21,11 +21,6 @@ export const Logo = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(196,196,196,1);
-  width: 10rem;
-  height: 3rem;
-  font-style: Bold;
-  font-size: 1.2rem;
 `;
 
 export const AboutUs = styled.a`

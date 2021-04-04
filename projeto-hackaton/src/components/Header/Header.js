@@ -10,11 +10,14 @@ import {
   Contact,
   RegisterA,
   LoginA,
-  ModalButton,
+  CloseModalButton,
   InputsDiv,
-  LoginButton
+  LoginButton,
+  ModalContent,
+  ExitModal,
 } from "./HeaderStyled";
 import api from "../../services/api";
+import imgLogoPerfil from "../../images/imgLogoPerfil.svg"
 
 Modal.setAppElement("#root")
 const Header = () => {
@@ -49,8 +52,9 @@ const Header = () => {
 
   return (
     <MainDiv>
+      {/* <img src={imgBackground} /> */}
       <HeaderTopDiv>
-        <Logo href={"/"}>Logo</Logo>
+        <Logo href={"/"}> <img src={imgLogoPerfil} /></Logo>
         <AboutUs href={"/"}>Sobre Nós</AboutUs>
         <Partners href={"/"}>Parceiros</Partners>
         <Contact href={"/"}>Contato</Contact>
@@ -58,18 +62,28 @@ const Header = () => {
         <RegisterA href={"/cadastro/responsavel"}>Cadastro</RegisterA>
       </HeaderTopDiv>
 
+      {/* MODAL */}
       <Modal isOpen={modalIsOpen} style={{ overlay: { backgroundColor: "grey" } }}>
-        <ModalButton onClick={() => setModalIsOpen(false)}>Fechar</ModalButton>
-        <form onSubmit={login}>
-          <InputsDiv>
-            <label>E-mail</label>
-            <input type="text" id="nmEmail" name="nmEmail" />
-            <label>Senha</label>
-            <input type="password" id="nmPassword" name="nmPassword" />
-            <LoginButton type="submit"> Logar </LoginButton>
-          </InputsDiv>
-        </form>
+          <ModalContent>
+            
+              <form onSubmit={login}>
+                <InputsDiv>
+                      <ExitModal>
+                          <CloseModalButton onClick={() => setModalIsOpen(false)}>X</CloseModalButton>
+                      </ExitModal>
+                  <label>E-mail</label>
+                  <input type="text" id="nmEmail" name="nmEmail" />
+                  <label>Senha</label>
+                  <input type="password" id="nmPassword" name="nmPassword" />
+                  <LoginButton type="submit"> Logar </LoginButton>
+                  
+                </InputsDiv>
+              </form>
+              
+          </ModalContent>
       </Modal>
+
+
     </MainDiv>
   );
 };

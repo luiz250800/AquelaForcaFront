@@ -8,8 +8,10 @@ import {
   InputsDiv,
   GenerateBilletButton,
   ModalButton,
+  ModalContent,
 } from "./Styled";
 import Header from "../../components/Header/Header";
+
 
 Modal.setAppElement("#root")
 const DonorRegisterPage = () => {
@@ -37,21 +39,16 @@ const DonorRegisterPage = () => {
 
 
         {/* M O D AL */}
-        <Modal isOpen={modalIsOpen}
-          style={
-            {
-              overlay: {
-                backgroundColor: "grey",
-              },
+        <Modal isOpen={modalIsOpen}>
 
-            }
-          }>
-
-
+          <ModalContent>
           <h1>Obrigado, você contribuiu com a educação de um aluno!!</h1>
           <h2>O Boleto no valor de R$ 25,00 foi enviado para o seu e-mail!</h2>
           <ModalButton onClick={() => setModalIsOpen(false)}>Finalizar</ModalButton>
+          </ModalContent>
+
         </Modal>
+  
       </MainDiv>
     </div>
   );

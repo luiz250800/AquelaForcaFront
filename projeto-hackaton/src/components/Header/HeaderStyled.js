@@ -21,11 +21,6 @@ export const Logo = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(196,196,196,1);
-  width: 10rem;
-  height: 3rem;
-  font-style: Bold;
-  font-size: 1.2rem;
 `;
 
 export const AboutUs = styled.a`
@@ -150,43 +145,26 @@ export const LoginA = styled.a`
     }
   `;
 
-export const ModalButton = styled.div`
-  
-  display: flex;
-  height: 48px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  background-color: #59498d;
-  transition: 0.3s;
-  color: #fff8f0;
-  margin-top: 50px;
-  margin-bottom: 50px;
 
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(255,136,17,1);
-    font-size: 1.2rem;
-  }
-
-  &:active {
-    background-color: #59498d;
-  }
-`;
+//M O D A L
+export const ModalContent = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 99%;
+`
 
 export const InputsDiv = styled.div`
   display: flex;
-  height: 60%;
-  width: 60%;
-  justify-content: space-evenly;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: Nunito, "sans-serif";
 
   input {
-    height: 20px;
-
+    width: 20rem;
+    height: 1.5rem;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -194,14 +172,51 @@ export const InputsDiv = styled.div`
   }
 `;
 
+export const ExitModal = styled.div`
+display: flex;
+flex-direction: row-reverse;
+text-align: right;
+width: 100%;
+margin-bottom: 2rem;
+`
+
+export const CloseModalButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: #59498d;
+  font-family: Nunito, "sans-serif";
+  transition: 0.3s ease-in-out;
+  color: #fff8f0;
+  height: 10px;
+  width:10px;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255,136,17,1);
+  }
+
+  &:active {
+    background-color: #59498d;
+  }
+`;
+
+
+
 export const LoginButton = styled.button`
   display: flex;
   height: 42px;
   width: 120px;
+  font-family: Nunito, "sans-serif";
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   background-color: #59498d;
+  transition: 0.3s ease-in-out;
   color: #fff8f0;
   border: none;
   outline: none;
@@ -209,7 +224,9 @@ export const LoginButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: #392f5a;
+    background-color: rgb(255,136,17,1);
+    font-size: 1.2rem;
+
   }
 
   &:active {
