@@ -18,7 +18,6 @@ import {
 } from "./HeaderStyled";
 import api from "../../services/api";
 import imgLogoPerfil from "../../images/imgLogoPerfil.svg"
-import imgBackground from "../../images/imgBackground.svg"
 
 Modal.setAppElement("#root")
 const Header = () => {

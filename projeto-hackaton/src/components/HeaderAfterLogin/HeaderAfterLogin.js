@@ -7,13 +7,14 @@ import {
   Partners,
   Contact
 } from "./HeaderAfterLoginStyled";
+import imgLogoPerfil from "../../images/imgLogoPerfil.svg"
 
 
 const HeaderAfterLogin = () => {
   return (
     <MainDiv>
       <HeaderTopDiv>
-      <Logo href={"/"}>      Logo      </Logo>
+      <Logo href={"/"}><img src={imgLogoPerfil} /> </Logo>
       <AboutUs href={"/"}>         Sobre Nós      </AboutUs>
       <Partners href={"/"}>        Parceiros      </Partners>
       <Contact href={"/"}>        Contato      </Contact>
