@@ -56,8 +56,8 @@ margin: 0 auto;
     &:hover {
       cursor: pointer;
       background-color: rgb(89,73,141,1);
-      width: 22rem;
-      height: 5rem;
+      width: 21rem;
+      height: 4rem;
       font-size: 2rem;
     }
   

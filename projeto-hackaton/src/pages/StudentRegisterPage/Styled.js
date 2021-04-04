@@ -53,6 +53,26 @@ export const StudentNameInput = styled.input`
   width: 430px;
 `;
 
+export const StudentStateSelect = styled.select`
+  display: block;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 200px;
+`;
+
+export const StudentCitySelect = styled.select`
+  display: block;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 430px;
+`;
+
 export const StudentRAInput = styled.input`
   display: block;
 
@@ -70,7 +90,7 @@ export const GradeSelect = styled.select`
   border-left: none;
   border-right: none;
   outline: none;
-  width: 100px;
+  width: 200px;
 `;
 
 export const SchoolSelect = styled.select`
@@ -148,7 +168,7 @@ export const TerciaryInfoDiv = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-` 
+`
 
 export const ChooseStudentRow = styled.div`
   display: flex;
@@ -156,10 +176,11 @@ export const ChooseStudentRow = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-    & > p {  
+  & > p {  
     font-weight: bold;
-    padding: 1rem 2rem;
-    }
+    padding: 0.5rem ;
+    align-items: left;
+  }
 `
 
 export const AddButton2 = styled.button`
@@ -219,4 +240,4 @@ margin-bottom: 18%;
   object-fit: cover;
   box-shadow: 6px 4px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 26px 0 rgba(0, 0, 0, 0.19);
 }
-` 
+`
