@@ -79,8 +79,12 @@ yarn start
 
 # Participantes:
 
-- Ellie Braga - UX - ![Linkedin](https://www.linkedin.com/in/ellie-braga)
-- Jackson Gomes - UX - ![Linkedin](https://www.linkedin.com/in/jackson-gomes-b564bb14b)
-- Carlos Augusto Luna - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/augusto-luna-4284313a) ![Github](https://github.com/Augustoluna)
-- Davi Bernardo - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/davibernardo) ![Github](https://github.com/davidtheblane)
-- Luiz Ricardo - Dev. Backend - ![Linkedin](https://www.linkedin.com/in/luiz-ricardo-soares-dos-santos-08580817b) ![Github](https://github.com/luiz250800)
+- Ellie Braga - UX - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/ellie-braga/)](https://www.linkedin.com/in/ellie-braga/)
+
+- Jackson Gomes - UX - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jackson-gomes-b564bb14b)](https://www.linkedin.com/in/jackson-gomes-b564bb14b)
+
+- Carlos Augusto Luna - Dev. Frontend - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/augusto-luna-4284313a/)](https://www.linkedin.com/in/augusto-luna-4284313a/)
+
+- Davi Bernardo - Dev. Frontend - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/davibernardo/)](https://www.linkedin.com/in/davibernardo/)
+
+- Luiz Ricardo - Dev. Backend - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luiz-ricardo-soares-dos-santos-08580817b/)](https://www.linkedin.com/in/luiz-ricardo-soares-dos-santos-08580817b/)
