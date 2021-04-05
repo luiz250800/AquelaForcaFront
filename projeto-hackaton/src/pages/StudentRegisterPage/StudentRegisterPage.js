@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
+import Modal from "react-modal";
 import {
   MainDiv,
   InfoDiv,
@@ -18,14 +19,26 @@ import {
   TerciaryInfoDiv,
   ChooseStudentRow,
   TermInfoDiv,
+  ModalContent,
+  CloseModal,
   Img,
+  FormBox,
+  BoxLeft,
+  BoxRight,
+  AddMaterials,
+  ButtonsModal,
+  DeleteRow,
 } from "./Styled";
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { FaPlusSquare } from "react-icons/fa";
 import HeaderAfterLogin from "../../components/HeaderAfterLogin/HeaderAfterLogin"
 import imgBabyDraw from "../../images/imgBabyDraw.svg";
 import api from "../../services/api";
 
+Modal.setAppElement("#root")
 const StudentRegisterPage = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const location = useLocation();
   const [newStudents, setNewStudents] = useState([]);
   const [students, setStudents] = useState([]);
@@ -211,6 +224,7 @@ const StudentRegisterPage = () => {
               </GradeSelect>
             </label>
           </SecondaryInfoDiv>
+
           <ButtonsDiv>
             <AddButton type="button" onClick={(e) => {
               addNewStudentInList(e.target.value)
@@ -220,11 +234,81 @@ const StudentRegisterPage = () => {
             <EndButton type="submit"> Finalizar </EndButton>
           </ButtonsDiv>
           </form>
+
           <TerciaryInfoDiv>
             {addStudentsInList()}
             {layoutStudents}
+
+              {/* BOTAO APENAS PARA ABRIR E DESENHAR O MODAL - INICIO */}     
+            <AddButton2 type="button" onClick={() => {setModalIsOpen(true)}}>
+              Adicionar Material
+            </AddButton2>
+              {/* APENAS PARA DESENHAR O MODAL - FIM */}
           </TerciaryInfoDiv>
 
+
+
+
+             {/* CONTEUDO MODAL  */}
+          <Modal isOpen={modalIsOpen}>  
+              <ModalContent>
+              <h2>Aqui você pode adicionar os materiais:</h2>
+
+                <FormBox>
+                  <BoxLeft>
+                <label>
+                  <select type="text" className="items">
+                    <option value="" selected>Selecione o material</option>
+                    <option value="1">Borracha</option>
+                    <option value="2">Lápis</option>
+                    <option value="3">Caneta</option>      
+                  </select>
+                </label>
+
+                <label>
+                  <select type="text" className="items">
+                    <option value="" selected>Selecione o material</option>
+                    <option value="1">Borracha</option>
+                    <option value="2">Lápis</option>
+                    <option value="3">Caneta</option>      
+                  </select>
+                </label>
+              
+                </BoxLeft>
+                <BoxRight>
+                <label>
+                  <select type="text" className="qtde">
+                    <option value="" selected>Quantidade</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>      
+                  </select>
+                  <DeleteRow><AiFillCloseCircle size="24px" color="rgb(244,208,111,1)" /></DeleteRow>
+                </label>
+
+                <label>
+                  <select type="text" className="qtde">
+                    <option value="" selected>Quantidade</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>      
+                  </select>
+                  <DeleteRow><AiFillCloseCircle size="24px" color="rgb(244,208,111,1)" /></DeleteRow>
+                </label>          
+                </BoxRight>
+
+                
+                </FormBox>
+
+                <ButtonsModal>
+                <AddMaterials><p>Adicionar</p><FaPlusSquare  size="34px" color="rgb(89,73,141,1)"/></AddMaterials>
+                <CloseModal onClick={() => setModalIsOpen(false)}> Finalizar </CloseModal>
+                </ButtonsModal>
+
+
+              </ModalContent>
+          </Modal>
+          {/* FIM MODAL */}
 
           <TermInfoDiv>
             <h4> Anonimidade do aluno </h4>

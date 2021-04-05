@@ -241,3 +241,153 @@ margin-bottom: 18%;
   box-shadow: 6px 4px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 26px 0 rgba(0, 0, 0, 0.19);
 }
 `
+
+//M O D A L
+
+export const ModalContent = styled.div`
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+font-family: Nunito, "sans-serif";
+height: 98%;
+background-color: rgb(255,248,240,1);
+
+& > h2 {
+  color: rgb(89,73,141,1);
+  padding-bottom: 2rem;
+}
+`
+
+
+export const FormBox = styled.div`
+display: flex;
+flex-direction: Row;
+flex-wrap: wrap; 
+align-items: center;
+justify-content: center;
+font-family: Nunito, "sans-serif";
+margin-bottom: 2rem;
+width: 100%;
+
+
+`
+export const BoxLeft = styled.div`
+display: flex;
+flex-direction: column;
+margin-right:4rem;
+
+
+
+& > label > select {
+    width: 20rem;
+    height: 1.5rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-family: Nunito, "sans-serif";
+    border-color: rgb(127,111,180,1);
+    background-color: rgb(255,248,240,1);
+    margin-bottom: 1.5rem;
+}
+`
+
+export const BoxRight = styled.div`
+display: flex;
+flex-direction: column;
+margin-right:1rem;
+
+& > label > select {
+    width: 8rem;
+    height: 1.5rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-family: Nunito, "sans-serif";
+    border-color: rgb(127,111,180,1);
+    background-color: rgb(255,248,240,1);
+    margin-bottom: 1.5rem;
+}
+
+& > label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+`
+
+//DELETAR LINHAS
+export const DeleteRow = styled.div`
+  display: flex;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+
+
+  &:hover {
+    color: rgb(89,73,141,1);
+  }
+
+  &:active {
+    color: #59498d;
+  }
+`
+
+
+//BOTOES DE ADICIONAR E FECHAR A MODAL
+export const ButtonsModal = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+
+`
+
+export const AddMaterials = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: rgb(253, 248, 240);
+
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(255,136,17,1);
+  }
+
+  &:active {
+    color: #59498d;
+  }
+` 
+
+export const CloseModal = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: #59498d;
+  font-family: Nunito, "sans-serif";
+  transition: 0.3s ease-in-out;
+  color: #fff8f0;
+  border-radius: 10px;
+
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255,136,17,1);
+  }
+
+  &:active {
+    background-color: #59498d;
+  }
+`;
+
+
