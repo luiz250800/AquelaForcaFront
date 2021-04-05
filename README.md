@@ -79,8 +79,8 @@ yarn start
 
 # Participantes:
 
-- Ellie Braga - UX - ![Linkedin](https://www.linkedin.com/in/ellie-braga/)
+- Ellie Braga - UX - ![Linkedin](https://www.linkedin.com/in/ellie-braga)
 - Jackson Gomes - UX - ![Linkedin](https://www.linkedin.com/in/jackson-gomes-b564bb14b)
-- Carlos Augusto Luna - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/augusto-luna-4284313a/) ![Github](https://github.com/Augustoluna)
-- Davi Bernardo - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/davibernardo/) ![Github](https://github.com/davidtheblane)
-- Luiz Ricardo - Dev. Backend - ![Linkedin](https://www.linkedin.com/in/luiz-ricardo-soares-dos-santos-08580817b/) ![Github](https://github.com/luiz250800)
+- Carlos Augusto Luna - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/augusto-luna-4284313a) ![Github](https://github.com/Augustoluna)
+- Davi Bernardo - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/davibernardo) ![Github](https://github.com/davidtheblane)
+- Luiz Ricardo - Dev. Backend - ![Linkedin](https://www.linkedin.com/in/luiz-ricardo-soares-dos-santos-08580817b) ![Github](https://github.com/luiz250800)
