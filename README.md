@@ -7,9 +7,9 @@
 # Sobre o projeto:
 // link do projeto hospedado no Heroku
 
-Aquela Força! é um projeto Web Responsivo, criado pelo Time 40 no primeiro Hackathon FCamara de 2021, evento organizado pela própria [FCamara](https://www.fcamara.com.br/), visando encontrar e selecionar talentos para integrar novas equipes para o time laranja da FCamara.
+Aquela Força! é um projeto Web Responsivo, criado pelo Time 40 no primeiro Hackathon FCamara de 2021, evento organizado pela própria [FCamara](https://www.fcamara.com.br/), visando encontrar e selecionar talentos para integrar novas equipes para o "Time Laranja".
 
-O projeto Aquela Força! é uma plataforma que visa aproximar pais que estão em situação de dificuldade financeira e pessoas dispostas e interessadas em contribuir com materiais escolares.
+O projeto Aquela Força! é uma plataforma que visa aproximar pais que estão em situação de dificuldade financeira e pessoas(doadores) dispostas e interessadas em contribuir com materiais escolares.
 
 
 # Dependências do projeto:
@@ -79,8 +79,8 @@ yarn start
 
 # Participantes:
 
-- Ellie Braga - UX - Linkedin em breve...
+- Ellie Braga - UX - ![Linkedin](https://www.linkedin.com/in/ellie-braga/)
 - Jackson Gomes - UX - Linkedin em breve...
 - Carlos Augusto Luna - Dev. Frontend - Linkedin em breve...
-- Davi Bernardo - Dev. Frontend - Linkedin em breve...
+- Davi Bernardo - Dev. Frontend - ![Linkedin](https://www.linkedin.com/in/davibernardo/) 
 - Luiz Ricardo - Dev. Backend - Linkedin em breve...
