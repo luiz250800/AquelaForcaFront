@@ -1,6 +1,6 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Modal from "react-modal";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import {
   MainDiv,
   InfoDiv,
@@ -15,10 +15,17 @@ import api from "../../services/api";
 
 Modal.setAppElement("#root")
 const DonorRegisterPage = () => {
+  const history = useHistory();
   const location = useLocation();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [donateSupplies] = useState(location.listDonateSupplies);
   const [totalValueBullet, setTotalValueBullet] = useState('');
+
+  useEffect(() => {
+    if (!location.listDonateSupplies) {
+      history.push('/busca/estudante');
+    } 
+  }, [location.listDonateSupplies])
 
   async function registerDonorAndDonates(e){
     e.preventDefault();
