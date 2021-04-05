@@ -18,13 +18,15 @@ const DonorRegisterPage = () => {
   const history = useHistory();
   const location = useLocation();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [donateSupplies] = useState(location.listDonateSupplies);
+  const [donateSupplies, setDonateSupplies] = useState([]);
   const [totalValueBullet, setTotalValueBullet] = useState('');
 
   useEffect(() => {
-    if (!location.listDonateSupplies) {
+    if (location.listDonateSupplies) {
+      setDonateSupplies(location.listDonateSupplies)
+    } else {
       history.push('/busca/estudante');
-    } 
+    }
   }, [location.listDonateSupplies])
 
   async function registerDonorAndDonates(e){
