@@ -35,7 +35,8 @@ O projeto Aquela Força! é uma plataforma que visa aproximar pessoas em situaç
 # Digite o comando abaixo para clonar o repositório.
 git clone https://github.com/luiz250800/AquelaForcaFront.git
 
-# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
+# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. 
+# Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
 cd AquelaForcaFront
 
 # Rode o comando abaixo para instalar as dependências do projeto.
@@ -57,7 +58,8 @@ npm start
 # Digite o comando abaixo para clonar o repositório.
 git clone https://github.com/luiz250800/AquelaForcaBack.git
 
-# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
+# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. 
+# Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
 cd AquelaForcaFront
 
 # Rode o comando abaixo para instalar as dependências do projeto.
@@ -71,8 +73,8 @@ yarn start
 
 ## Participantes:
 
-- Ellie Braga - UX 
-- Jackson Gomes - UX
-- Carlos Augusto Luna - Dev. Frontend
-- Davi Bernardo - Dev. Frontend
-- Luiz Ricardo - Dev. Backend
+- Ellie Braga - UX - Linkedin em breve...
+- Jackson Gomes - UX - Linkedin em breve...
+- Carlos Augusto Luna - Dev. Frontend - Linkedin em breve...
+- Davi Bernardo - Dev. Frontend - Linkedin em breve...
+- Luiz Ricardo - Dev. Backend - Linkedin em breve...
