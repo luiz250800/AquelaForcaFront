@@ -1,12 +1,16 @@
-<h1 align="center">
-    <img src="./src/images/imgLogoPerfil.svg">
-</h1>
+# Aquela Força!
+<img src="./src/images/imgLogoPerfil.svg">
 
-## Sobre o projeto:
 
-O projeto Aquela Força! é uma plataforma que visa aproximar pessoas em situação de dificuldades financeiras e doadores, focando no nicho de material escolar como produto dessa doação.
+# Sobre o projeto:
+// link do projeto hospedado no Heroku
 
-## Dependências do projeto:
+Aquela Força! é um projeto Web Responsivo, criado pelo Time 40 no primeiro Hackathon FCamara de 2021, evento organizado pela própria [FCamara](https://www.fcamara.com.br/), visando encontrar e selecionar talentos para integrar novas equipes para o time laranja da FCamara.
+
+O projeto Aquela Força! é uma plataforma que visa aproximar pais que estão em situação de dificuldade financeira e pessoas dispostas e interessadas em contribuir com materiais escolares.
+
+
+# Dependências do projeto:
 
 - npm
 - yarn
@@ -14,7 +18,7 @@ O projeto Aquela Força! é uma plataforma que visa aproximar pessoas em situaç
 - ReactJS
 - MongoDB
 
-## Links Úteis:
+# Links Úteis:
 
 - https://www.devmedia.com.br/como-instalar-o-node-js-npm-e-o-react-no-windows/40329
 
@@ -22,10 +26,10 @@ O projeto Aquela Força! é uma plataforma que visa aproximar pessoas em situaç
 
 - https://www.mongodb.com/try/download/community
 
-## Instruções:
+# Instruções:
 
-### Front-end
-*Pré requisitos: npm
+## Front-end
+### - Pré requisitos: npm
 ```bash
 
 # Crie uma pasta local que receberá o conteúdo do repositório remoto.
@@ -47,8 +51,8 @@ npm start
 
 ```
 
-### Back-end
-*Pré requisitos: yarn
+## Back-end
+### - Pré requisitos: yarn
 ```bash
 
 # Crie uma pasta local que receberá o conteúdo do repositório remoto.
@@ -71,7 +75,7 @@ yarn start
 ```
 
 
-## Participantes:
+# Participantes:
 
 - Ellie Braga - UX - Linkedin em breve...
 - Jackson Gomes - UX - Linkedin em breve...
