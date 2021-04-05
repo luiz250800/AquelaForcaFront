@@ -24,21 +24,54 @@ O projeto Aquela Força! é uma plataforma que visa aproximar pessoas em situaç
 
 ## Instruções:
 
-- Crie uma pasta local que receberá o conteúdo do repositório remoto
+### Front-end
+*Pré requisitos: npm
+```bash
 
-- Copie o link do repositório no campo "Code" do github
+# Crie uma pasta local que receberá o conteúdo do repositório remoto.
+# Abra a janela do terminal dentro dessa pasta.
+# Copie o link do repositório (campo "Code" do github).
 
-- Digite o comando git clone link-do-projeto-copiado-do-github
+# Digite o comando abaixo para clonar o repositório.
+git clone https://github.com/luiz250800/AquelaForcaFront.git
 
-- Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas
+# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
+cd AquelaForcaFront
 
-- Rode o comando npm install para instalar as dependências do projeto
+# Rode o comando abaixo para instalar as dependências do projeto.
+npm install
 
-- Rode o comando npm run start para executar o projeto
+# Rode o comando abaixo para executar o projeto.
+npm start
+
+```
+
+### Back-end
+*Pré requisitos: yarn
+```bash
+
+# Crie uma pasta local que receberá o conteúdo do repositório remoto.
+# Abra a janela do terminal dentro dessa pasta.
+# Copie o link do repositório (campo "Code" do github).
+
+# Digite o comando abaixo para clonar o repositório.
+git clone https://github.com/luiz250800/AquelaForcaBack.git
+
+# Acesse a pasta que foi copiada para o seu repositório local com o comando cd nome-da-pasta. Caso tenha dúvida do nome, rode o comando ls para listar todas as pastas.
+cd AquelaForcaFront
+
+# Rode o comando abaixo para instalar as dependências do projeto.
+yarn install
+
+# Rode o comando abaixo para executar o projeto.
+yarn start
+
+```
+
 
 ## Participantes:
 
-- Ellie Braga - UX
+- Ellie Braga - UX 
 - Jackson Gomes - UX
 - Carlos Augusto Luna - Dev. Frontend
 - Davi Bernardo - Dev. Frontend
