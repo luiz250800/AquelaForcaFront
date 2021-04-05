@@ -7,10 +7,12 @@ import StudentCard from "../../components/StudentCard/StudentCard";
 const ListStudentPage = () => {
   const history = useHistory();
   const location = useLocation();
-  const [students, setStudents] = useState(location.students);
+  const [students, setStudents] = useState([]);
   
   useEffect(() => {
-    if (!location.students) {
+    if (location.students) {
+      setStudents(location.students)
+    } else {
       history.push('/busca/estudante');
     }
   }, [location.students])

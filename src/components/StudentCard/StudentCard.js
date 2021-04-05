@@ -18,6 +18,7 @@ const StudentCard = ({ student }) => {
   useEffect(() => {
     api.get(`/api/supplieStudent/${student._id}`).then(response => {
       setStudentSupplies(response.data)
+      console.log(student._id);
     })
   }, [])
 
