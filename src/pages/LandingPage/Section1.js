@@ -14,7 +14,13 @@ const CallToAction = () => {
       <table>
         <td>
           <th><h1>O que acha de investir na educação de crianças que precisam?</h1></th>
-          <tr><p>Existem crianças que infelizmente não possuem material para estudar. Essa plataforma foi criada com o mintuito de estabeleceruma ponte entre escolas, doadores e alunos que precisam dos materiais. </p></tr>
+          <tr>
+            <p> 
+              A solidariedade é uma ação essencial para trazer ao mundo e às pessoas um pouco mais de esperança.
+               Nos dias atuais ainda existem muitas crianças que infelizmente não possuem material para estudar. 
+               Essa plataforma foi criada com o intuito de estabelecer uma ponte entre escolas, doadores e alunos.
+           Se você tem disposição de ajudar o próximo e oportunidade de fazer o bem. Faça! </p>
+          </tr>
           <tr><DonnorButton className="donnorButton" href={"/busca/estudante"}>Bora Doar!</DonnorButton></tr>
         </td>
       </table>

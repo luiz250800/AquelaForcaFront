@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
 margin: 0;
-margin-bottom: 4rem;
+margin-bottom: 2rem;
 padding: 0;
 width: 95vw;
 height: 31rem;
@@ -23,6 +23,7 @@ box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 padding: 0 5% 0 38%;
 border-radius: 10px;
 
+
 & > h1 {
     color: white;
 }
@@ -36,12 +37,13 @@ border-radius: 10px;
 export const Image = styled.div`
 margin: 0;
 padding: 0;
+left: 2rem;
 position: absolute;
 z-index: 100;
 
 & > img{
-    width: 26rem;
-    height: 26rem;
+    width: 25rem;
+    height: 25rem;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 3rem;

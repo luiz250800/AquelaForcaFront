@@ -5,6 +5,7 @@ export const MainDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Nunito, "sans-serif";
 `;
 
 export const TitleDiv = styled.div`
@@ -73,6 +74,8 @@ export const RegisterButton = styled.button`
   display: flex;
   height: 42px;
   width: 120px;
+  font-family: Nunito, "sans-serif";
+  font-size: 1rem;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
