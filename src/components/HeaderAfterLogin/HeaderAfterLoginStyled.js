@@ -12,6 +12,7 @@ export const HeaderTopDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   height: 15vh;
 `
 

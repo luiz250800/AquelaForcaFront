@@ -17,7 +17,7 @@ import {
   ExitModal,
 } from "./HeaderStyled";
 import api from "../../services/api";
-import imgLogoPerfil from "../../images/imgLogoPerfil.svg"
+import imgLogoPerfilPNG from "../../images/imgLogoPerfilPNG.png"
 
 Modal.setAppElement("#root")
 const Header = () => {
@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <MainDiv>
       <HeaderTopDiv>
-        <Logo href={"/"}> <img src={imgLogoPerfil} /></Logo>
+        <Logo href={"/"}> <img src={imgLogoPerfilPNG} /></Logo>
         <AboutUs href={"/"}>Sobre Nós</AboutUs>
         <Partners href={"/"}>Parceiros</Partners>
         <Contact href={"/"}>Contato</Contact>

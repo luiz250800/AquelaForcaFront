@@ -5,6 +5,7 @@ export const MainDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Nunito, "sans-serif";
 `;
 
 export const TitleDiv = styled.div`
@@ -13,7 +14,6 @@ export const TitleDiv = styled.div`
   margin-bottom: 30px;
 
   h3 {
-    font-family: nunito;
     font-size: 32px;
     color: #59498d;
   }
@@ -74,6 +74,8 @@ export const RegisterButton = styled.button`
   height: 42px;
   width: 120px;
   border-radius: 10px;
+  font-size: 1rem;
+  font-family: Nunito, "sans-serif";
   justify-content: center;
   align-items: center;
   background-color: #59498d;
@@ -99,7 +101,15 @@ export const DisclaimerDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  text-align: justify;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  & > p{
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
   width: 50vw;
-  margin: 30px;
+  }
 `;

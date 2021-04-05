@@ -28,9 +28,10 @@ padding-left: 4rem;
         }
   & > td > tr {
   display: flex;
+  flex-direction: column;
   text-align: justify;
-  line-height: 1.6rem;
-  padding-bottom: 2.5rem;
+  line-height: 1.5rem;
+  padding-bottom: 2.4rem;
               }      
 }
 `;

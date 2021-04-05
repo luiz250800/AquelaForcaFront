@@ -72,10 +72,11 @@ const ParentRegisterPage = () => {
           </InputsDiv>
           <RegisterButton type="submit"> Cadastrar </RegisterButton>
         </form>
+        
         <DisclaimerDiv>
-          <h4> Anonimidade do aluno </h4>
+          <p> <b>Anonimidade do aluno</b></p>
           <p>
-            Por motivos de ética e segurança, qualquer aluno cadastrado neste sistema será anônimo para para proteção da criança.
+            Por motivos de ética e segurança, qualquer aluno cadastrado neste sistema será anônimo para proteção da criança.
         </p>
         </DisclaimerDiv>
       </MainDiv>
