@@ -40,7 +40,7 @@ const Header = () => {
         if(data) {
           history.push({ pathname: '/cadastro/estudante', responsible: data._id });
         } else {
-          alert('Usuário ou senha incorretos.')
+          alert('E-mail ou senha incorretos.')
         }
       }).catch(() => {
         alert('Erro ao logar');

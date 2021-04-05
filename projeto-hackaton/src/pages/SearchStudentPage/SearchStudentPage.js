@@ -86,14 +86,21 @@ const SearchStudentPage = () => {
     return options;
   }
 
-  function listStudents(e) {
+  async function listStudents(e) {
     e.preventDefault();
 
     const school = document.getElementById('school').value;
     const grade = document.getElementById('grade').value;
 
     if (school && grade) {
-      api.get(`/api/student/schoolGrade/${school}/${grade}`).then((response) => {
+      await api.get(`/api/student/schoolGrade/${school}/${grade}`).then((response) => {
+        const data = response.data;
+
+        if(data.length > 0) {
+          history.push({ pathname: '/lista/estudante', students: data });
+        } else {
+          alert('Nenhum estudante encontrado para essa série nesta escola.')
+        }
       }).catch(() => {
         alert('Erro ao buscar alunos');
       })
@@ -143,7 +150,6 @@ const SearchStudentPage = () => {
             <ButtonDiv>
               <SearchStudentButton> Buscar Aluno </SearchStudentButton>
             </ButtonDiv>
-
           </InfoDiv>
         </form>
       </MainDiv>

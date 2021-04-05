@@ -1,86 +1,74 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import {
   BigBox,
   CardDiv,
   PicDiv,
   SchoolName,
-  TableDiv,
   DonnorButton,
 } from "./Styled";
-
 import imgKid from "../../images/imgKid.svg";
 import { BiHeartCircle } from "react-icons/bi";
+import api from "../../services/api";
 
-const StudentCard = () => {
+const StudentCard = ({ student }) => {
+  const history = useHistory();
+  const [studentSupplies, setStudentSupplies] = useState([])
+
+  useEffect(() => {
+    api.get(`/api/supplieStudent/${student._id}`).then(response => {
+      setStudentSupplies(response.data)
+    })
+  }, [])
+
+  function callRegisterDonorByDonateSupplies(e) {
+    e.preventDefault();
+
+    const supplieStudents = document.getElementsByName('supplieStudent[]');
+    const qtDonates = document.getElementsByName('qtDonate[]');
+
+    let listDonateSupplies = [];
+    for (let i = 0; i < supplieStudents.length; i++) {
+      let qtDonate = parseInt(qtDonates[i].value)
+      if(qtDonate && qtDonate > 0){
+        listDonateSupplies.push({
+          supplieStudent: supplieStudents[i].value,
+          qtDonate: qtDonate
+        })
+      }
+    }
+
+    if(listDonateSupplies.length > 0){
+      history.push({pathname: '/cadastro/doador', listDonateSupplies});
+    } else {
+      alert('Insira a quantidade de pelo menos um material que deseja doar para o aluno')
+    }
+  }
+
   return (
     <BigBox>
       <CardDiv>
         <SchoolName>
-          <h5>Nome da Escola</h5>
+          <h5>{student.school[0].nmSchool}</h5>
         </SchoolName>
-        <PicDiv>
-          <img src={imgKid} />
-        </PicDiv>
-        <TableDiv>
-          <table>
-            <td1>
-              <th>Essa aluninha precisa de:</th>
-              <tr>
-                <BiHeartCircle color="rgb(255,136,17,1)" />
-                Cadernos Brochura
-              </tr>
+        <form onSubmit={callRegisterDonorByDonateSupplies}>
+          <PicDiv>
+            <img src={imgKid} />
+          </PicDiv>
 
-              <tr>
-                <BiHeartCircle color="rgb(255,136,17,1)" />
-                Lápis de Cor
-              </tr>
+          {studentSupplies.map((supplieStudent, key) => (
+            <div>
+              <BiHeartCircle color="rgb(255,136,17,1)" />&nbsp;
+              {supplieStudent.supplie[0].nmSupplie} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {supplieStudent.qtSupplie}x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="hidden" name="supplieStudent[]" id="supplieStudent" value={supplieStudent._id} />
+              <input type="number" name="qtDonate[]" id="qtDonate" min="0" max={supplieStudent.qtSupplie}></input>
 
-              <tr>
-                <BiHeartCircle color="rgb(255,136,17,1)" />
-                Canetinha Hidrocor
-              </tr>
-            </td1>
-
-            <td2>
-              <th>Qtd</th>
-              <tr>2</tr>
-              <tr>1</tr>
-              <tr>1</tr>
-            </td2>
-
-            <td3>
-              <th>
-                <label>Doar</label>
-              </th>
-              <tr>
-                <select>
-                  <option selected disabled />
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
-              </tr>
-
-              <tr>
-                <select>
-                  <option selected disabled />
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
-              </tr>
-              <tr>
-                <select>
-                  <option selected disabled />
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
-              </tr>
-            </td3>
-          </table>
-        </TableDiv>
-        <DonnorButton> Fazer Doação </DonnorButton>
+            </div>
+          ))}
+          <br />
+          <DonnorButton type="submit"> Fazer Doação </DonnorButton>
+        </form>
       </CardDiv>
     </BigBox>
   );

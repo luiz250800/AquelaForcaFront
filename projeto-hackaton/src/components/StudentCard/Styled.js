@@ -35,68 +35,18 @@ export const SchoolName = styled.div`
 
 export const PicDiv = styled.div`
   margin: 0;
-  height: 50%;
+  height: 60%;
   padding: 1% 0;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-items: center;
-
+  margin-bottom: 20px;
+  margin-top: -25px;
   & > img {
     height: 70%;
   }
-`;
-
-//T A B E L A
-export const TableDiv = styled.div`
-  margin: 0;
-  padding: 1rem;
-
-  & > table {
-    line-height: 0;
-    text-align: center;
-    height: 100%;
-
-    & > td1 {
-      margin: 0;
-      padding: 0;
-      padding-right: 1rem;
-      text-align: left;
-      & > th {
-        color: #000;
-        line-height: 2rem;
-      }
-      & > tr {
-        line-height: 2rem;
-      }
-    }
-
-    & > td2 {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      & > th {
-        color: rgb(255, 136, 17, 1);
-        line-height: 2rem;
-      }
-      & > tr {
-        line-height: 2rem;
-      }
-    }
-
-    & > td3 {
-      margin: 0;
-      padding: 0;
-      & > th {
-        color: rgb(255, 136, 17, 1);
-        line-height: 2rem;
-      }
-      & > tr {
-        line-height: 2rem;
-      }
-    }
-  }
-`;
+`
 
 export const DonnorButton = styled.button`
   display: flex;

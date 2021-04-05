@@ -1,54 +1,80 @@
-import React from "react";
+import { React, useState } from "react";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useLocation } from 'react-router-dom';
 import {
   MainDiv,
   InfoDiv,
   TitleDiv,
   InputsDiv,
   GenerateBilletButton,
-  ModalButton,
+  ModalA,
   ModalContent,
 } from "./Styled";
 import Header from "../../components/Header/Header";
-
+import api from "../../services/api";
 
 Modal.setAppElement("#root")
 const DonorRegisterPage = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const location = useLocation();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [donateSupplies] = useState(location.listDonateSupplies);
+  const [totalValueBullet, setTotalValueBullet] = useState('');
+
+  async function registerDonorAndDonates(e){
+    e.preventDefault();
+    
+    const nmSurname = document.getElementById('nmSurname').value;
+    const nmDonor = document.getElementById('nmDonor').value;
+    const nmEmail = document.getElementById('nmEmail').value;
+    const nmCpf = document.getElementById('nmCpf').value;
+
+    if(nmSurname && nmDonor && nmEmail && nmCpf){
+      await api.post('/api/donor/register', donateSupplies,{params: {
+        nmSurname,
+        nmDonor,
+        nmEmail,
+        nmCpf
+      }}).then((response) => {
+        const responseTotalValueBullet = response.data.totalValueBullet.toString().replace(".", ",");
+        setTotalValueBullet(responseTotalValueBullet)
+        setModalIsOpen(true)
+      }).catch(() => {
+        alert('Erro ao cadastrar');
+      })
+    } else {
+      alert('Preencha todos os campos')
+    }
+  }
+
   return (
     <div>
-      <Header/>
+      <Header />
       <MainDiv>
-        <InfoDiv>
-          <TitleDiv>
-            <h3> A criança que você ajudou vai ficar muito feliz! </h3>
-          </TitleDiv>
-          <InputsDiv>
-            <label> Nome do Doador </label>
-            <input type="text" />
-            <label> Apelido </label>
-            <input type="text" />
-            <label> E-mail </label>
-            <input type="email" />
-            <label> CPF </label>
-            <input type="number" />
-          </InputsDiv>
-          <GenerateBilletButton onClick={() => setModalIsOpen(true)}> Gerar Boleto </GenerateBilletButton>
-        </InfoDiv>
-
-
-        {/* M O D AL */}
+        <form onSubmit={registerDonorAndDonates}>
+          <InfoDiv>
+            <TitleDiv>
+              <h3> A criança que você ajudou vai ficar muito feliz! </h3>
+            </TitleDiv>
+            <InputsDiv>
+              <label> Nome do Doador </label>
+              <input type="text" name="nmSurname" id="nmSurname"/>
+              <label> Apelido </label>
+              <input type="text" name="nmDonor" id="nmDonor"/>
+              <label> E-mail </label>
+              <input type="email" name="nmEmail" id="nmEmail"/>
+              <label> CPF </label>
+              <input type="text" name="nmCpf" id="nmCpf"/>
+            </InputsDiv>
+            <GenerateBilletButton types="submit"> Gerar Boleto </GenerateBilletButton>
+          </InfoDiv>
+        </form>
         <Modal isOpen={modalIsOpen}>
-
           <ModalContent>
-          <h1>Obrigado, você contribuiu com a educação de um aluno!!</h1>
-          <h2>O Boleto no valor de R$ 25,00 foi enviado para o seu e-mail!</h2>
-          <ModalButton onClick={() => setModalIsOpen(false)}>Finalizar</ModalButton>
+            <h1>Obrigado, você contribuiu com a educação de um aluno!!</h1>
+            <h2>O Boleto no valor de R$ {totalValueBullet} foi enviado para o seu e-mail!</h2>
+            <ModalA href="/busca/estudante">Finalizar</ModalA>
           </ModalContent>
-
         </Modal>
-  
       </MainDiv>
     </div>
   );
