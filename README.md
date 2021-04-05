@@ -1,6 +1,7 @@
-<img src="./src/images/imgLogoPerfil.svg"> 
+
 # Aquela Força!
 
+![Logo](https://github.com/luiz250800/AquelaForcaFront/blob/main/src/images/imgLogoPerfil.svg)
 
 
 # Sobre o projeto:
