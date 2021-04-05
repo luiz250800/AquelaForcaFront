@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import Modal from "react-modal";
 import {
   MainDiv,
@@ -20,7 +20,9 @@ import {
   ChooseStudentRow,
   TermInfoDiv,
   ModalContent,
-  CloseModal,
+  Finalization,
+  ExitModal,
+  CloseModalButton,
   Img,
   FormBox,
   BoxLeft,
@@ -28,6 +30,7 @@ import {
   AddMaterials,
   ButtonsModal,
   DeleteRow,
+  SupplieQtdInput
 } from "./Styled";
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
 import { AiFillCloseCircle } from "react-icons/ai";
@@ -38,31 +41,45 @@ import api from "../../services/api";
 
 Modal.setAppElement("#root")
 const StudentRegisterPage = () => {
+  const history = useHistory();
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const location = useLocation();
   const [newStudents, setNewStudents] = useState([]);
   const [students, setStudents] = useState([]);
+  const [nowStudent, setNowStudent] = useState('');
+  const [studentSupplies, setStudentSupplies] = useState([]);
   const [layoutStudents, setLayoutStudents] = useState([]);
+  const [supplies, setSupplies] = useState([]);
+  const [newSupplie, setNewSupplie] = useState([]);
   const [states, setStates] = useState('');
   const [cities, setCities] = useState('');
   const [grades, setGrades] = useState('');
   const [schools, setSchools] = useState('');
 
   useEffect(() => {
-    api.get('/api/locality/states').then(response => {
-      const listStates = response.data;
-      setStates(listStates)
-    })
+    if (location.responsible) {
+      api.get(`/api/student/responsible/${location.responsible}`).then(response => {
+        const listStudents = response.data;
+        setStudents(listStudents)
+      })
 
-    api.get('/api/grade').then(response => {
-      const listGrades = response.data;
-      setGrades(listGrades)
-    })
+      api.get('/api/locality/states').then(response => {
+        const listStates = response.data;
+        setStates(listStates)
+      })
 
-    api.get(`/api/student/responsible/${location.responsible}`).then(response => {
-      const listStudents = response.data;
-      setStudents(listStudents)
-    })
+      api.get('/api/grade').then(response => {
+        const listGrades = response.data;
+        setGrades(listGrades)
+      })
+
+      api.get(`/api/supplie`).then(response => {
+        const listSupplies = response.data;
+        setSupplies(listSupplies)
+      })
+    } else {
+      history.push('/');
+    }
   }, [])
 
   function addNewStudentInList(e) {
@@ -76,7 +93,7 @@ const StudentRegisterPage = () => {
       grade: document.getElementById('serie').value
     }
 
-    if(student.responsible && student.nmStudent && student.nmRa && student.school && student.grade) {
+    if (student.responsible && student.nmStudent && student.nmRa && student.school && student.grade) {
       listNewStudents.push(student)
       setNewStudents(listNewStudents)
       addNewStudentsInList(listNewStudents)
@@ -88,7 +105,7 @@ const StudentRegisterPage = () => {
   async function insertNewStudents(e) {
     e.preventDefault();
 
-    if(newStudents.length > 0) {
+    if (newStudents.length > 0) {
       await api.post('/api/student/register', newStudents).then(() => {
         alert('Cadastro Realizado com sucesso!')
         window.location.reload();
@@ -121,15 +138,6 @@ const StudentRegisterPage = () => {
 
       addSchoolsInSelect()
     }
-  }
-
-  function addStudentsInList() {
-    const list = [];
-    
-    for (const student of students) {
-      list.push(<ChooseStudentRow><p>{student.nmStudent} - R.A: {student.nmRa}</p><AddButton2><AiOutlinePlus />Adicionar Material</AddButton2></ChooseStudentRow>)
-    }
-    return list;
   }
 
   function addNewStudentsInList(listNewStudents = []) {
@@ -172,6 +180,82 @@ const StudentRegisterPage = () => {
     return options;
   }
 
+  async function callStudentSupplies(student) {
+    await api.get(`/api/supplieStudent/${student}`).then((response) => {
+      setNowStudent(student)
+      setStudentSupplies(response.data)
+      setModalIsOpen(true)
+    }).catch(() => {
+      alert('Erro ao listar materiais');
+    })
+  }
+
+  function addFieldSupplie() {
+    setNewSupplie([...newSupplie, (
+      <FormBox>
+        <BoxLeft>
+          <label>
+            <select type="text" className="items" name="supplie[]" id="supplie">
+              <option value="">Selecione o material</option>
+              {supplies.map((supplie, key) => (
+                <option value={supplie._id}>{supplie.nmSupplie}</option>
+              ))}
+            </select>
+          </label>
+        </BoxLeft>
+        <BoxRight>
+          <label>
+            <SupplieQtdInput type="number" className="items" name="qtSupplie[]" id="qtSupplie" max="99" min="0" />
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </label>
+        </BoxRight>
+      </FormBox>
+    )])
+  }
+
+  async function deleteSupplieStudent(supplieStudent, student) {
+    await api.delete(`/api/supplieStudent/remove/${supplieStudent}`).then(() => {
+      callStudentSupplies(student)
+    }).catch(() => {
+      alert('Erro ao remover material');
+    })
+  }
+
+  async function registerStudentSupplies(e) {
+    e.preventDefault()
+
+    const _ids = document.getElementsByName('_id[]');
+    const supplies = document.getElementsByName('supplie[]');
+    const qtSupplies = document.getElementsByName('qtSupplie[]');
+
+    let listSupplesStudent = [];
+    for (let i = 0; i < supplies.length; i++) {
+      let qtSupplie = parseInt(qtSupplies[i].value)
+      if (qtSupplie && qtSupplie > 0) {
+        if (_ids[i]) {
+          listSupplesStudent.push({
+            _id: _ids[i].value,
+            supplie: supplies[i].value,
+            student: nowStudent,
+            qtSupplie: qtSupplie
+          })
+        } else {
+          listSupplesStudent.push({
+            supplie: supplies[i].value,
+            student: nowStudent,
+            qtSupplie: qtSupplie
+          })
+        }
+      }
+    }
+
+    await api.put('/api/supplieStudent/edit/', listSupplesStudent).then(() => {
+      callStudentSupplies(nowStudent)
+    }).catch(() => {
+      alert('Erro ao alterar material');
+    })
+  }
+
   return (
     <div>
       <HeaderAfterLogin />
@@ -181,134 +265,116 @@ const StudentRegisterPage = () => {
             <h2>Preencha os dados sobre o aluno</h2>
           </FirstInfoDiv>
           <form onSubmit={insertNewStudents}>
-          <SecondaryInfoDiv>
-            <label>
-              Nome do Aluno
+            <SecondaryInfoDiv>
+              <label>
+                Nome do Aluno
             <StudentNameInput id="nmAluno" name="nmAluno" />
-            </label>
-            <label>
-              R.A
+              </label>
+              <label>
+                R.A
             <StudentRAInput id="nmRa" name="nmRa" />
-            </label>
-            <label>
-              Estados
+              </label>
+              <label>
+                Estados
             <StudentStateSelect id="estado" name="estado" onChange={(e) => {
-                listCities(e.target.value)
-                listSchools()
-              }}>
-                <option value="" selected>Selecione um estado</option>
-                {addStatesInSelect()}
-              </StudentStateSelect>
-            </label>
-            <label>
-              Cidades
+                  listCities(e.target.value)
+                  listSchools()
+                }}>
+                  <option value="" selected>Selecione um estado</option>
+                  {addStatesInSelect()}
+                </StudentStateSelect>
+              </label>
+              <label>
+                Cidades
             <StudentCitySelect id="cidade" name="cidade" onChange={() => {
-                listSchools()
-              }}>
-                <option value="" selected>Selecione uma cidade</option>
-                {addCitiesInSelect()}
-              </StudentCitySelect>
-            </label>
-            <label>
-              Escola
+                  listSchools()
+                }}>
+                  <option value="" selected>Selecione uma cidade</option>
+                  {addCitiesInSelect()}
+                </StudentCitySelect>
+              </label>
+              <label>
+                Escola
             <SchoolSelect id="escola" name="escola">
-                <option value="" selected>Selecione uma escola</option>
-                {addSchoolsInSelect()}
-              </SchoolSelect>
-            </label>
-            <label>
-              Série
+                  <option value="" selected>Selecione uma escola</option>
+                  {addSchoolsInSelect()}
+                </SchoolSelect>
+              </label>
+              <label>
+                Série
             <GradeSelect id="serie" name="serie">
-                <option value="" selected></option>
-                {addGradesInSelect()}
-              </GradeSelect>
-            </label>
-          </SecondaryInfoDiv>
+                  <option value="" selected></option>
+                  {addGradesInSelect()}
+                </GradeSelect>
+              </label>
+            </SecondaryInfoDiv>
 
-          <ButtonsDiv>
-            <AddButton type="button" onClick={(e) => {
-              addNewStudentInList(e.target.value)
-            }}>
-              <AiOutlineUserAdd size="20px" /> Adicionar Aluno
+            <ButtonsDiv>
+              <AddButton type="button" onClick={(e) => {
+                addNewStudentInList(e.target.value)
+              }}>
+                <AiOutlineUserAdd size="20px" /> Adicionar Aluno
           </AddButton>
-            <EndButton type="submit"> Finalizar </EndButton>
-          </ButtonsDiv>
+              <EndButton type="submit"> Finalizar </EndButton>
+            </ButtonsDiv>
           </form>
 
           <TerciaryInfoDiv>
-            {addStudentsInList()}
+            {students.map((student, key) => (
+              <ChooseStudentRow>
+                <p>{student.nmStudent} - R.A: {student.nmRa}</p>
+                <AddButton2 onClick={(e) => {
+                  callStudentSupplies(student._id)
+                }}>
+                  <AiOutlinePlus />
+                    Adicionar Material
+                  </AddButton2>
+              </ChooseStudentRow>
+            ))}
             {layoutStudents}
-
-              {/* BOTAO APENAS PARA ABRIR E DESENHAR O MODAL - INICIO */}     
-            <AddButton2 type="button" onClick={() => {setModalIsOpen(true)}}>
-              Adicionar Material
-            </AddButton2>
-              {/* APENAS PARA DESENHAR O MODAL - FIM */}
           </TerciaryInfoDiv>
 
-
-
-
-             {/* CONTEUDO MODAL  */}
-          <Modal isOpen={modalIsOpen}>  
-              <ModalContent>
+          <Modal isOpen={modalIsOpen}>
+            <ModalContent>
+              <ExitModal>
+                <CloseModalButton onClick={() => setModalIsOpen(false)}>X</CloseModalButton>
+              </ExitModal>
               <h2>Aqui você pode adicionar os materiais:</h2>
-
-                <FormBox>
-                  <BoxLeft>
-                <label>
-                  <select type="text" className="items">
-                    <option value="" selected>Selecione o material</option>
-                    <option value="1">Borracha</option>
-                    <option value="2">Lápis</option>
-                    <option value="3">Caneta</option>      
-                  </select>
-                </label>
-
-                <label>
-                  <select type="text" className="items">
-                    <option value="" selected>Selecione o material</option>
-                    <option value="1">Borracha</option>
-                    <option value="2">Lápis</option>
-                    <option value="3">Caneta</option>      
-                  </select>
-                </label>
-              
-                </BoxLeft>
-                <BoxRight>
-                <label>
-                  <select type="text" className="qtde">
-                    <option value="" selected>Quantidade</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>      
-                  </select>
-                  <DeleteRow><AiFillCloseCircle size="24px" color="rgb(244,208,111,1)" /></DeleteRow>
-                </label>
-
-                <label>
-                  <select type="text" className="qtde">
-                    <option value="" selected>Quantidade</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>      
-                  </select>
-                  <DeleteRow><AiFillCloseCircle size="24px" color="rgb(244,208,111,1)" /></DeleteRow>
-                </label>          
-                </BoxRight>
-
-                
-                </FormBox>
+              <form onSubmit={registerStudentSupplies}>
+                {studentSupplies.map((supplieStudent, key) => (
+                  <FormBox>
+                    <BoxLeft>
+                      <label>
+                        <input type="hidden" name="_id[]" id="_id" value={supplieStudent._id} />
+                        <select type="text" className="items" name="supplie[]" id="supplie" value={supplieStudent.supplie[0]._id}>
+                          <option value="">Selecione o material</option>
+                          {supplies.map((supplie, key) => (
+                            <option value={supplie._id}>{supplie.nmSupplie}</option>
+                          ))}
+                        </select>
+                      </label>
+                    </BoxLeft>
+                    <BoxRight>
+                      <label>
+                        <SupplieQtdInput type="number" className="items" name="qtSupplie[]" id="qtSupplie" value={supplieStudent.qtSupplie} max="99" min="0" />
+                        <DeleteRow onClick={(e) => {
+                          deleteSupplieStudent(supplieStudent._id, supplieStudent.student[0]._id)
+                        }}><AiFillCloseCircle size="24px" color="rgb(244,208,111,1)" /></DeleteRow>
+                      </label>
+                    </BoxRight>
+                  </FormBox>
+                ))}
+                {newSupplie}
 
                 <ButtonsModal>
-                <AddMaterials><p>Adicionar</p><FaPlusSquare  size="34px" color="rgb(89,73,141,1)"/></AddMaterials>
-                <CloseModal onClick={() => setModalIsOpen(false)}> Finalizar </CloseModal>
+                  <AddMaterials onClick={(e) => {
+                    addFieldSupplie()
+                  }}><p>Adicionar</p><FaPlusSquare size="34px" color="rgb(89,73,141,1)" /></AddMaterials>
+                  <Finalization type="submit"> Finalizar </Finalization>
                 </ButtonsModal>
-
-
-              </ModalContent>
+              </form>
+            </ModalContent>
           </Modal>
-          {/* FIM MODAL */}
 
           <TermInfoDiv>
             <h4> Anonimidade do aluno </h4>

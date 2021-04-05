@@ -52,7 +52,6 @@ const Header = () => {
 
   return (
     <MainDiv>
-      {/* <img src={imgBackground} /> */}
       <HeaderTopDiv>
         <Logo href={"/"}> <img src={imgLogoPerfil} /></Logo>
         <AboutUs href={"/"}>Sobre Nós</AboutUs>

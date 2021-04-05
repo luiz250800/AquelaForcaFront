@@ -83,6 +83,19 @@ export const StudentRAInput = styled.input`
   width: 200px;
 `;
 
+export const SupplieQtdInput = styled.input`
+  width: 3rem;
+  height: 1.5rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-family: Nunito,"sans-serif";
+  border-color: rgb(127,111,180,1);
+  background-color: rgb(255,248,240,1);
+  margin-bottom: 1.5rem;
+`
+
 export const GradeSelect = styled.select`
   display: block;
 
@@ -347,7 +360,7 @@ export const ButtonsModal = styled.div`
 
 `
 
-export const AddMaterials = styled.button`
+export const AddMaterials = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,9 +376,9 @@ export const AddMaterials = styled.button`
   &:active {
     color: #59498d;
   }
-` 
+`
 
-export const CloseModal = styled.button`
+export const Finalization = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -391,3 +404,35 @@ export const CloseModal = styled.button`
 `;
 
 
+export const ExitModal = styled.div`
+display: flex;
+flex-direction: row-reverse;
+text-align: right;
+width: 100%;
+margin-bottom: 2rem;
+`
+
+export const CloseModalButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: #59498d;
+  font-family: Nunito, "sans-serif";
+  transition: 0.3s ease-in-out;
+  color: #fff8f0;
+  height: 10px;
+  width:10px;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255,136,17,1);
+  }
+
+  &:active {
+    background-color: #59498d;
+  }
+`;
