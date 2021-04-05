@@ -88,7 +88,8 @@ font-family: Nunito, "sans-serif";
 }
 `
 
-export const ModalButton = styled.button`
+export const ModalA = styled.a`
+  text-decoration: none;
   display: flex;
   height: 48px;
   width: 200px;
